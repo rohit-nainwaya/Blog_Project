@@ -5,8 +5,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/6hB3S9bIaco",
         ott: "https://www.primevideo.com/detail/The-Shawshank-Redemption/0H3BD1NXV10WDK34UPWWVK4NNS",
         cast: [
-            { name: "Tim Robbins", role: "Andy Dufresne", img: "/drama/Tim_Robbins.jpg" },
-            { name: "Morgan Freeman", role: "Ellis Boyd 'Red' Redding", img: "/drama/Morgan_Freeman.jpg" },
+            { name: "Tim Robbins", role: "Andy Dufresne", img: "./drama/Tim_Robbins.jpg" },
+            { name: "Morgan Freeman", role: "Ellis Boyd 'Red' Redding", img: "./drama/Morgan_Freeman.jpg" },
         ]
     },
     forrestGump: {
@@ -15,8 +15,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/bLvqoHBptjg",
         ott: "https://www.primevideo.com/detail/Forrest-Gump/0NHF7IFLIDER9XNBFBK2HLMQXC",
         cast: [
-            { name: "Tom Hanks", role: "Forrest Gump", img: "/drama/Tom_Hanks.jpg" },
-            { name: "Robin Wright", role: "Jenny Curran", img: "/drama/Robin_Wright.jpg" },
+            { name: "Tom Hanks", role: "Forrest Gump", img: "./drama/Tom_Hanks.jpg" },
+            { name: "Robin Wright", role: "Jenny Curran", img: "./drama/Robin_Wright.jpg" },
         ]
     },
     schindlersList: {
@@ -25,8 +25,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/gG22XNhtnoY",
         ott: "https://www.primevideo.com/detail/Schindlers-List/0GQFRLV513O3A7W2LL3JGO27TX",
         cast: [
-            { name: "Liam Neeson", role: "Oskar Schindler", img: "/drama/Liam_Neeson.jpg" },
-            { name: "Ralph Fiennes", role: "Amon Goeth", img: "/drama/Ralph_Fiennes.jpg" },
+            { name: "Liam Neeson", role: "Oskar Schindler", img: "./drama/Liam_Neeson.jpg" },
+            { name: "Ralph Fiennes", role: "Amon Goeth", img: "./drama/Ralph_Fiennes.jpg" },
         ]
     },
     theGodfather: {
@@ -35,8 +35,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/UaVTIH8mujA",
         ott: "https://www.netflix.com/in/title/60011152",
         cast: [
-            { name: "Marlon Brando", role: "Don Vito Corleone", img: "/drama/Marlon_Brando.jpg" },
-            { name: "Al Pacino", role: "Michael Corleone", img: "/drama/Al_Pacino.jpg" },
+            { name: "Marlon Brando", role: "Don Vito Corleone", img: "./drama/Marlon_Brando.jpg" },
+            { name: "Al Pacino", role: "Michael Corleone", img: "./drama/Al_Pacino.jpg" },
         ]
     },
     twelveAngryMen: {
@@ -45,8 +45,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/_13J_9B5jEk",
         ott: "https://www.primevideo.com/detail/12-Angry-Men-1957/0R1DYZPH9XC72I479NEXF195HL",
         cast: [
-            { name: "Henry Fonda", role: "Juror #8", img: "/drama/Henry_Fonda.jpg" },
-            { name: "Lee J. Cobb", role: "Juror #3", img: "/drama/Lee_J_Cobb.jpg" },
+            { name: "Henry Fonda", role: "Juror #8", img: "./drama/Henry_Fonda.jpg" },
+            { name: "Lee J. Cobb", role: "Juror #3", img: "./drama/Lee_J_Cobb.jpg" },
         ]
     },
     fightClub: {
@@ -55,8 +55,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/qtRKdVHc-cE",
         ott: "https://www.primevideo.com/detail/Fight-Club/0PURXNG422YCQ38VJ23Y7SHRNA",
         cast: [
-            { name: "Brad Pitt", role: "Tyler Durden", img: "/drama/Brad_Pitt.jpg" },
-            { name: "Edward Norton", role: "The Narrator", img: "/drama/Edward_Norton.jpg" },
+            { name: "Brad Pitt", role: "Tyler Durden", img: "./drama/Brad_Pitt.jpg" },
+            { name: "Edward Norton", role: "The Narrator", img: "./drama/Edward_Norton.jpg" },
         ]
     },
     pursuitOfHappyness: {
@@ -65,8 +65,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/DMOBlEcRuw8",
         ott: "https://www.primevideo.com/detail/The-Pursuit-of-Happyness/0MW4Y2G0VYCAN9FD9NU3J3RA0U",
         cast: [
-            { name: "Will Smith", role: "Chris Gardner", img: "/drama/Will_Smith.jpg" },
-            { name: "Jaden Smith", role: "Christopher Gardner Jr.", img: "/drama/Jaden_Smith.jpg" },
+            { name: "Will Smith", role: "Chris Gardner", img: "./drama/Will_Smith.jpg" },
+            { name: "Jaden Smith", role: "Christopher Gardner Jr.", img: "./drama/Jaden_Smith.jpg" },
         ]
     },
     gladiator: {
@@ -75,8 +75,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/owK1qxDselE",
         ott: "https://www.primevideo.com/detail/Gladiator/0I2PF17D25K06KVEQKVXSDD0RR",
         cast: [
-            { name: "Russell Crowe", role: "Maximus", img: "/drama/Russell_Crowe.jpg" },
-            { name: "Joaquin Phoenix", role: "Commodus", img: "/drama/Joaquin_Phoenix.jpg" },
+            { name: "Russell Crowe", role: "Maximus", img: "./drama/Russell_Crowe.jpg" },
+            { name: "Joaquin Phoenix", role: "Commodus", img: "./drama/Joaquin_Phoenix.jpg" },
         ]
     },
     beautifulMind: {
@@ -85,8 +85,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/aS_d0Ayjw4o",
         ott: "https://www.primevideo.com/detail/A-Beautiful-Mind/0G9EMVCFH8R00XPS61US0ZVWJ0",
         cast: [
-            { name: "Russell Crowe", role: "John Nash", img: "/drama/Russell_Crowe.jpg" },
-            { name: "Jennifer Connelly", role: "Alicia Nash", img: "/drama/Jennifer_Connelly.jpg" },
+            { name: "Russell Crowe", role: "John Nash", img: "./drama/Russell_Crowe.jpg" },
+            { name: "Jennifer Connelly", role: "Alicia Nash", img: "./drama/Jennifer_Connelly.jpg" },
         ]
     },
     thereWillBeBlood: {
@@ -95,8 +95,8 @@ const dramaData = {
         trailer: "https://www.youtube.com/embed/FeSLPELpMeM",
         ott: "https://www.primevideo.com/detail/There-Will-Be-Blood/0NPY3ZR0EP5MVHLKS0E78UVKZY",
         cast: [
-            { name: "Daniel Day-Lewis", role: "Daniel Plainview", img: "/drama/Daniel_Day-Lewis.jpg" },
-            { name: "Paul Dano", role: "Eli Sunday", img: "/drama/Paul_Dano.jpg" },
+            { name: "Daniel Day-Lewis", role: "Daniel Plainview", img: "./drama/Daniel_Day-Lewis.jpg" },
+            { name: "Paul Dano", role: "Eli Sunday", img: "./drama/Paul_Dano.jpg" },
         ]
     },
 };

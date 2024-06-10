@@ -5,8 +5,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/oR_e9y-bka0",
         ott: "https://www.primevideo.com/detail/0PYGJSHY4HSQKPBH7KSBQ5KNXL",
         cast: [
-            { name: "Keir Dullea", role: "Dr. Dave Bowman", img: "/sciFi/Keir_Dullea.jpg" },
-            { name: "Gary Lockwood", role: "Dr. Frank Poole", img: "/sciFi/Gary_Lockwood.jpg" },
+            { name: "Keir Dullea", role: "Dr. Dave Bowman", img: "./sciFi/Keir_Dullea.jpg" },
+            { name: "Gary Lockwood", role: "Dr. Frank Poole", img: "./sciFi/Gary_Lockwood.jpg" },
         ]
     },
     bladeRunner2049: {
@@ -15,8 +15,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/gCcx85zbxz4",
         ott: "https://www.netflix.com/title/80185786",
         cast: [
-            { name: "Ryan Gosling", role: "K", img: "/sciFi/Ryan_Gosling.jpg" },
-            { name: "Harrison Ford", role: "Rick Deckard", img: "/sciFi/Harrison_Ford.jpg" },
+            { name: "Ryan Gosling", role: "K", img: "./sciFi/Ryan_Gosling.jpg" },
+            { name: "Harrison Ford", role: "Rick Deckard", img: "./sciFi/Harrison_Ford.jpg" },
         ]
     },
     theMatrix: {
@@ -25,8 +25,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/m8e-FF8MsqU",
         ott: "https://www.primevideo.com/detail/0GZ30IXRRXQVH3S1FRNDMFT0X3",
         cast: [
-            { name: "Keanu Reeves", role: "Neo", img: "/sciFi/Keanu_Reeves.jpg" },
-            { name: "Laurence Fishburne", role: "Morpheus", img: "/sciFi/Laurence_Fishburne.jpg" },
+            { name: "Keanu Reeves", role: "Neo", img: "./sciFi/Keanu_Reeves.jpg" },
+            { name: "Laurence Fishburne", role: "Morpheus", img: "./sciFi/Laurence_Fishburne.jpg" },
         ]
     },
     inception: {
@@ -35,8 +35,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/8hP9D6kZseM",
         ott: "https://www.netflix.com/title/70131314",
         cast: [
-            { name: "Leonardo DiCaprio", role: "Dom Cobb", img: "/sciFi/Leonardo_DiCaprio.jpg" },
-            { name: "Joseph Gordon-Levitt", role: "Arthur", img: "/sciFi/Joseph_Gordon-Levitt.jpg" },
+            { name: "Leonardo DiCaprio", role: "Dom Cobb", img: "./sciFi/Leonardo_DiCaprio.jpg" },
+            { name: "Joseph Gordon-Levitt", role: "Arthur", img: "./sciFi/Joseph_Gordon-Levitt.jpg" },
         ]
     },
     interstellar: {
@@ -45,8 +45,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/zSWdZVtXT7E",
         ott: "https://www.primevideo.com/detail/0JTO8MSK2BBU27VLH0W5IUQKV4",
         cast: [
-            { name: "Matthew McConaughey", role: "Cooper", img: "/sciFi/Matthew_McConaughey.jpg" },
-            { name: "Anne Hathaway", role: "Amelia Brand", img: "/sciFi/Anne_Hathaway.jpg" },
+            { name: "Matthew McConaughey", role: "Cooper", img: "./sciFi/Matthew_McConaughey.jpg" },
+            { name: "Anne Hathaway", role: "Amelia Brand", img: "./sciFi/Anne_Hathaway.jpg" },
         ]
     },
     jurassicPark: {
@@ -55,8 +55,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/QWBKEmWWL38",
         ott: "https://www.netflix.com/title/60001398",
         cast: [
-            { name: "Sam Neill", role: "Dr. Alan Grant", img: "/sciFi/Sam_Neill.jpg" },
-            { name: "Laura Dern", role: "Dr. Ellie Sattler", img: "/sciFi/Laura_Dern.jpg" },
+            { name: "Sam Neill", role: "Dr. Alan Grant", img: "./sciFi/Sam_Neill.jpg" },
+            { name: "Laura Dern", role: "Dr. Ellie Sattler", img: "./sciFi/Laura_Dern.jpg" },
         ]
     },
     fifthElement: {
@@ -65,8 +65,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/fQ9RqgcR24g",
         ott: "https://www.primevideo.com/detail/0P9NKSM8FS2O0XUMY4IGUIEUGS",
         cast: [
-            { name: "Bruce Willis", role: "Korben Dallas", img: "/sciFi/Bruce_Willis.jpg" },
-            { name: "Milla Jovovich", role: "Leeloo", img: "/sciFi/Milla_Jovovich.jpg" },
+            { name: "Bruce Willis", role: "Korben Dallas", img: "./sciFi/Bruce_Willis.jpg" },
+            { name: "Milla Jovovich", role: "Leeloo", img: "./sciFi/Milla_Jovovich.jpg" },
         ]
     },
     avengersEndgame: {
@@ -75,8 +75,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/TcMBFSGVi1c",
         ott: "https://www.disneyplus.com/movies/marvel-studios-avengers-endgame/7dIrIQfc5wqc",
         cast: [
-            { name: "Robert Downey Jr.", role: "Tony Stark / Iron Man", img: "/sciFi/Robert_Downey_Jr.jpg" },
-            { name: "Chris Evans", role: "Steve Rogers / Captain America", img: "/sciFi/Chris_Evans.jpg" },
+            { name: "Robert Downey Jr.", role: "Tony Stark / Iron Man", img: "./sciFi/Robert_Downey_Jr.jpg" },
+            { name: "Chris Evans", role: "Steve Rogers / Captain America", img: "./sciFi/Chris_Evans.jpg" },
         ]
     },
     alien: {
@@ -85,8 +85,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/LjLamj-b0I8",
         ott: "https://www.primevideo.com/detail/0OBVO5D24NVJBM6A29PLIJXZB4",
         cast: [
-            { name: "Sigourney Weaver", role: "Ellen Ripley", img: "/sciFi/Sigourney_Weaver.jpg" },
-            { name: "Tom Skerritt", role: "Dallas", img: "/sciFi/Tom_Skerritt.jpg" },
+            { name: "Sigourney Weaver", role: "Ellen Ripley", img: "./sciFi/Sigourney_Weaver.jpg" },
+            { name: "Tom Skerritt", role: "Dallas", img: "./sciFi/Tom_Skerritt.jpg" },
         ]
     },
     snowpiercer: {
@@ -95,8 +95,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/nX5PwfEMBM0",
         ott: "https://www.netflix.com/title/70270362",
         cast: [
-            { name: "Chris Evans", role: "Curtis Everett", img: "/sciFi/Chris_Evans_Snowpiercer.jpg" },
-            { name: "Song Kang-ho", role: "Namgoong Minsoo", img: "/sciFi/Song_Kang-ho.jpg" },
+            { name: "Chris Evans", role: "Curtis Everett", img: "./sciFi/Chris_Evans_Snowpiercer.jpg" },
+            { name: "Song Kang-ho", role: "Namgoong Minsoo", img: "./sciFi/Song_Kang-ho.jpg" },
         ]
     }
 };

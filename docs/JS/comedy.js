@@ -5,8 +5,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/urRkGvhXc8w",
         ott: "https://www.netflix.com/in/title/771476",
         cast: [
-            { name: "Graham Chapman", role: "King Arthur", img: "/comedy/Graham_Chapman.jpg" },
-            { name: "John Cleese", role: "Sir Lancelot the Brave", img: "/comedy/John_Cleese.jpg" },
+            { name: "Graham Chapman", role: "King Arthur", img: "./comedy/Graham_Chapman.jpg" },
+            { name: "John Cleese", role: "Sir Lancelot the Brave", img: "./comedy/John_Cleese.jpg" },
         ]
     },
     airplane: {
@@ -15,8 +15,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/07pPmCfKi3U",
         ott: "https://www.primevideo.com/detail/Airplane/0MF27TDS99IGSDWV6G5YQP6L2D",
         cast: [
-            { name: "Robert Hays", role: "Ted Striker", img: "/comedy/Robert_Hays.jpg" },
-            { name: "Julie Hagerty", role: "Elaine Dickinson", img: "/comedy/Julie_Hagerty.jpg" },
+            { name: "Robert Hays", role: "Ted Striker", img: "./comedy/Robert_Hays.jpg" },
+            { name: "Julie Hagerty", role: "Elaine Dickinson", img: "./comedy/Julie_Hagerty.jpg" },
         ]
     },
     groundhogDay: {
@@ -25,8 +25,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/GncQtURdcE4",
         ott: "https://www.primevideo.com/detail/Groundhog-Day/0QX3YI41P3QILLCJHBBMYE4DVP",
         cast: [
-            { name: "Bill Murray", role: "Phil Connors", img: "/comedy/Bill_Murray.jpg" },
-            { name: "Andie MacDowell", role: "Rita Hanson", img: "/comedy/Andie_MacDowell.jpg" },
+            { name: "Bill Murray", role: "Phil Connors", img: "./comedy/Bill_Murray.jpg" },
+            { name: "Andie MacDowell", role: "Rita Hanson", img: "./comedy/Andie_MacDowell.jpg" },
         ]
     },
     americanPie: {
@@ -35,8 +35,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/iUZ3Yxok6N8",
         ott: "https://www.netflix.com/in/title/22037751",
         cast: [
-            { name: "Jason Biggs", role: "Jim Levenstein", img: "/comedy/Jason_Biggs.jpg" },
-            { name: "Chris Klein", role: "Chris 'Oz' Ostreicher", img: "/comedy/Chris_Klein.jpg" },
+            { name: "Jason Biggs", role: "Jim Levenstein", img: "./comedy/Jason_Biggs.jpg" },
+            { name: "Chris Klein", role: "Chris 'Oz' Ostreicher", img: "./comedy/Chris_Klein.jpg" },
         ]
     },
     superbad: {
@@ -45,8 +45,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/4eaZ_48ZYog",
         ott: "https://www.netflix.com/in/title/70058023",
         cast: [
-            { name: "Jonah Hill", role: "Seth", img: "/comedy/Jonah_Hill.jpg" },
-            { name: "Michael Cera", role: "Evan", img: "/comedy/Michael_Cera.jpg" },
+            { name: "Jonah Hill", role: "Seth", img: "./comedy/Jonah_Hill.jpg" },
+            { name: "Michael Cera", role: "Evan", img: "./comedy/Michael_Cera.jpg" },
         ]
     },
     friends: {
@@ -55,8 +55,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/IEEbUzffzrk",
         ott: "https://www.netflix.com/in/title/70153404",
         cast: [
-            { name: "Jennifer Aniston", role: "Rachel Green", img: "/comedy/Jennifer_Aniston.jpg" },
-            { name: "Courteney Cox", role: "Monica Geller", img: "/comedy/Courteney_Cox.jpg" },
+            { name: "Jennifer Aniston", role: "Rachel Green", img: "./comedy/Jennifer_Aniston.jpg" },
+            { name: "Courteney Cox", role: "Monica Geller", img: "./comedy/Courteney_Cox.jpg" },
         ]
     },
     theOffice: {
@@ -65,8 +65,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/tNcDHWpselE",
         ott: "https://www.netflix.com/in/title/70136120",
         cast: [
-            { name: "Steve Carell", role: "Michael Scott", img: "/comedy/Steve_Carell.jpg" },
-            { name: "Rainn Wilson", role: "Dwight Schrute", img: "/comedy/Rainn_Wilson.jpg" },
+            { name: "Steve Carell", role: "Michael Scott", img: "./comedy/Steve_Carell.jpg" },
+            { name: "Rainn Wilson", role: "Dwight Schrute", img: "./comedy/Rainn_Wilson.jpg" },
         ]
     },
     parksAndRec: {
@@ -75,8 +75,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/5IZWeAwdJ-s",
         ott: "https://www.primevideo.com/detail/Parks-And-Recreation/0IMOVVKFVSJLZKRHDHZ7HNSWUT",
         cast: [
-            { name: "Amy Poehler", role: "Leslie Knope", img: "/comedy/Amy_Poehler.jpg" },
-            { name: "Nick Offerman", role: "Ron Swanson", img: "/comedy/Nick_Offerman.jpg" },
+            { name: "Amy Poehler", role: "Leslie Knope", img: "./comedy/Amy_Poehler.jpg" },
+            { name: "Nick Offerman", role: "Ron Swanson", img: "./comedy/Nick_Offerman.jpg" },
         ]
     },
     brooklynNineNine: {
@@ -85,8 +85,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/icTOP9F17pU",
         ott: "https://www.netflix.com/in/title/70281562",
         cast: [
-            { name: "Andy Samberg", role: "Jake Peralta", img: "/comedy/Andy_Samberg.jpg" },
-            { name: "Terry Crews", role: "Terry Jeffords", img: "/comedy/Terry_Crews.jpg" },
+            { name: "Andy Samberg", role: "Jake Peralta", img: "./comedy/Andy_Samberg.jpg" },
+            { name: "Terry Crews", role: "Terry Jeffords", img: "./comedy/Terry_Crews.jpg" },
         ]
     },
     schittsCreek: {
@@ -95,8 +95,8 @@ const comedyData = {
         trailer: "https://www.youtube.com/embed/W0uWS6CnC2o",
         ott: "https://www.netflix.com/in/title/80036165",
         cast: [
-            { name: "Eugene Levy", role: "Johnny Rose", img: "/comedy/Eugene_Levy.jpg" },
-            { name: "Catherine O'Hara", role: "Moira Rose", img: "/comedy/Catherine_OHara.jpg" },
+            { name: "Eugene Levy", role: "Johnny Rose", img: "./comedy/Eugene_Levy.jpg" },
+            { name: "Catherine O'Hara", role: "Moira Rose", img: "./comedy/Catherine_OHara.jpg" },
         ]
     },
 };

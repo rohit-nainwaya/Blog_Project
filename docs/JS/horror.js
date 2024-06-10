@@ -5,8 +5,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/YDGw1MTEe9k",
         ott: "https://www.netflix.com/pt-en/title/14546619",
         cast: [
-            { name: "Ellen Burstyn", role: "Chris MacNeil", img: "/horror/Ellen_Burstyn.jpg" },
-            { name: "Max von Sydow", role: "Father Merrin", img: "/horror/Max_von_Sydow.jpg" },
+            { name: "Ellen Burstyn", role: "Chris MacNeil", img: "./horror/Ellen_Burstyn.jpg" },
+            { name: "Max von Sydow", role: "Father Merrin", img: "./horror/Max_von_Sydow.jpg" },
         ]
     },
     shining: {
@@ -15,8 +15,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/5Cb3ik6zP2I",
         ott: "https://tv.apple.com/in/movie/the-shining/umc.cmc.be3gn94hs3l9fjvg34ex9sy1",
         cast: [
-            { name: "Jack Nicholson", role: "Jack Torrance", img: "/horror/Jack_Nicholson.jpg" },
-            { name: "Shelley Duvall", role: "Wendy Torrance", img: "/horror/Shelley_Duvall.jpg" },
+            { name: "Jack Nicholson", role: "Jack Torrance", img: "./horror/Jack_Nicholson.jpg" },
+            { name: "Shelley Duvall", role: "Wendy Torrance", img: "./horror/Shelley_Duvall.jpg" },
         ]
     },
     psycho: {
@@ -25,8 +25,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/Wz719b9QUqY",
         ott: "https://www.primevideo.com/detail/Psycho/0NLRDLAQ1XETCMSGRXD6H0R4WK",
         cast: [
-            { name: "Anthony Perkins", role: "Norman Bates", img: "/horror/Anthony_Perkins.jpg" },
-            { name: "Janet Leigh", role: "Marion Crane", img: "/horror/Janet_Leigh.jpg" },
+            { name: "Anthony Perkins", role: "Norman Bates", img: "./horror/Anthony_Perkins.jpg" },
+            { name: "Janet Leigh", role: "Marion Crane", img: "./horror/Janet_Leigh.jpg" },
         ]
     },
     conjuring: {
@@ -35,8 +35,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/k10ETZ41q5o",
         ott: "https://www.netflix.com/in/title/70251894",
         cast: [
-            { name: "Vera Farmiga", role: "Lorraine Warren", img: "/horror/Vera_Farmiga.jpg" },
-            { name: "Patrick Wilson", role: "Ed Warren", img: "/horror/Patrick_Wilson.jpg" },
+            { name: "Vera Farmiga", role: "Lorraine Warren", img: "./horror/Vera_Farmiga.jpg" },
+            { name: "Patrick Wilson", role: "Ed Warren", img: "./horror/Patrick_Wilson.jpg" },
         ]
     },
     silenceLambs: {
@@ -45,8 +45,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/W6Mm8Sbe__o",
         ott: "https://www.primevideo.com/detail/The-Silence-of-the-Lambs/0PNN0D2G09Z4HE1QOJ7ENJEVFM",
         cast: [
-            { name: "Jodie Foster", role: "Clarice Starling", img: "/horror/Jodie_Foster.jpg" },
-            { name: "Anthony Hopkins", role: "Hannibal Lecter", img: "/horror/Anthony_Hopkins.jpg" },
+            { name: "Jodie Foster", role: "Clarice Starling", img: "./horror/Jodie_Foster.jpg" },
+            { name: "Anthony Hopkins", role: "Hannibal Lecter", img: "./horror/Anthony_Hopkins.jpg" },
         ]
     },
     nightmareElmStreet: {
@@ -55,8 +55,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/dCVh4lBfW-c",
         ott: "https://tv.apple.com/in/movie/a-nightmare-on-elm-street/umc.cmc.2gxjjzta1kb4a1ysonxlo5twi",
         cast: [
-            { name: "Heather Langenkamp", role: "Nancy Thompson", img: "/horror/Heather_Langenkamp.jpg" },
-            { name: "Robert Englund", role: "Freddy Krueger", img: "/horror/Robert_Englund.jpg" },
+            { name: "Heather Langenkamp", role: "Nancy Thompson", img: "./horror/Heather_Langenkamp.jpg" },
+            { name: "Robert Englund", role: "Freddy Krueger", img: "./horror/Robert_Englund.jpg" },
         ]
     },
     hillHouse: {
@@ -65,8 +65,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/3eqxXqJDmcY",
         ott: "https://www.netflix.com/in/title/80189221",
         cast: [
-            { name: "Michiel Huisman", role: "Steven Crain", img: "/horror/Michiel_Huisman.jpg" },
-            { name: "Carla Gugino", role: "Olivia Crain", img: "/horror/Carla_Gugino.jpg" },
+            { name: "Michiel Huisman", role: "Steven Crain", img: "./horror/Michiel_Huisman.jpg" },
+            { name: "Carla Gugino", role: "Olivia Crain", img: "./horror/Carla_Gugino.jpg" },
         ]
     },
     babadook: {
@@ -75,8 +75,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/k5WQZzDRVtw",
         ott: "https://tv.apple.com/us/movie/the-babadook/umc.cmc.44oyvcxsw4z32tozidkk6glv0",
         cast: [
-            { name: "Essie Davis", role: "Amelia", img: "/horror/Essie_Davis.jpg" },
-            { name: "Noah Wiseman", role: "Samuel", img: "/horror/Noah_Wiseman.jpg" },
+            { name: "Essie Davis", role: "Amelia", img: "./horror/Essie_Davis.jpg" },
+            { name: "Noah Wiseman", role: "Samuel", img: "./horror/Noah_Wiseman.jpg" },
         ]
     },
     hereditary: {
@@ -85,8 +85,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/V6wWKNij_1M",
         ott: "https://www.primevideo.com/detail/Hereditary/0T65HGH8XLZN0612MUMF3JQ2RO",
         cast: [
-            { name: "Toni Collette", role: "Annie Graham", img: "/horror/Toni_Collette.jpg" },
-            { name: "Alex Wolff", role: "Peter Graham", img: "/horror/Alex_Wolff.jpg" },
+            { name: "Toni Collette", role: "Annie Graham", img: "./horror/Toni_Collette.jpg" },
+            { name: "Alex Wolff", role: "Peter Graham", img: "./horror/Alex_Wolff.jpg" },
         ]
     },
     sixthSense: {
@@ -95,8 +95,8 @@ const horrorData = {
         trailer: "https://www.youtube.com/embed/VG9AGf66tXM",
         ott: "https://www.hotstar.com/in/movies/the-sixth-sense/1260018039",
         cast: [
-            { name: "Bruce Willis", role: "Dr. Malcolm Crowe", img: "/horror/Bruce_Willis.jpg" },
-            { name: "Haley Joel Osment", role: "Cole Sear", img: "/horror/Haley_Joel_Osment.jpg" },
+            { name: "Bruce Willis", role: "Dr. Malcolm Crowe", img: "./horror/Bruce_Willis.jpg" },
+            { name: "Haley Joel Osment", role: "Cole Sear", img: "./horror/Haley_Joel_Osment.jpg" },
         ]
     }
 };

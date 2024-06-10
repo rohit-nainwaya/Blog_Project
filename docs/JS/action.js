@@ -15,8 +15,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/hEJnMQG9ev8",
         ott: "https://www.primevideo.com/detail/Mad-Max-Fury-Road/0G9GAOJ4273C0PK4FCPXS4KEJF",
         cast: [
-            { name: "Tom Hardy", role: "Max Rockatansky", img: "/action/Tom_Hardy.jpg" },
-            { name: "Charlize Theron", role: "Imperator Furiosa", img: "/action/Charlize_Theron.jpg" },
+            { name: "Tom Hardy", role: "Max Rockatansky", img: "./action/Tom_Hardy.jpg" },
+            { name: "Charlize Theron", role: "Imperator Furiosa", img: "./action/Charlize_Theron.jpg" },
         ]
     },
     darkKnight: {
@@ -25,8 +25,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/EXeTwQWrcwY",
         ott: "https://www.primevideo.com/detail/The-Dark-Knight/0QSTXR0EXWWYI4D3UGMLFM4A0Q",
         cast: [
-            { name: "Christian Bale", role: "Bruce Wayne / Batman", img: "/action/Christian_Bale.jpg" },
-            { name: "Heath Ledger", role: "The Joker", img: "/action/Heath_Ledger.jpg" },
+            { name: "Christian Bale", role: "Bruce Wayne / Batman", img: "./action/Christian_Bale.jpg" },
+            { name: "Heath Ledger", role: "The Joker", img: "./action/Heath_Ledger.jpg" },
         ]
     },
     terminator2: {
@@ -35,8 +35,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/lwSysg9o7wE",
         ott: "https://www.primevideo.com/detail/Terminator-2-Judgment-Day/0QTY6TWMC8JW830MI5FQND475S",
         cast: [
-            { name: "Arnold Schwarzenegger", role: "The Terminator", img: "/action/Arnold_Schwarzenegger.jpg" },
-            { name: "Linda Hamilton", role: "Sarah Connor", img: "/action/Linda_Hamilton.jpg" },
+            { name: "Arnold Schwarzenegger", role: "The Terminator", img: "./action/Arnold_Schwarzenegger.jpg" },
+            { name: "Linda Hamilton", role: "Sarah Connor", img: "./action/Linda_Hamilton.jpg" },
         ]
     },
     matrix: {
@@ -45,8 +45,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/mctdeCb9Dro",
         ott: "https://primevideo.com/detail/The-Matrix/0MNMSXF63GQDYGKL8E4HV9BYO2",
         cast: [
-            { name: "Keanu Reeves", role: "Neo", img: "/action/Keanu_Reeves.jpg" },
-            { name: "Laurence Fishburne", role: "Morpheus", img: "/action/Laurence_Fishburne.jpg" },
+            { name: "Keanu Reeves", role: "Neo", img: "./action/Keanu_Reeves.jpg" },
+            { name: "Laurence Fishburne", role: "Morpheus", img: "./action/Laurence_Fishburne.jpg" },
         ]
     },
     gladiator: {
@@ -55,8 +55,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/owK1qxDselE",
         ott: "https://www.primevideo.com/detail/Gladiator/0I2PF17D25K06KVEQKVXSDD0RR",
         cast: [
-            { name: "Russell Crowe", role: "Maximus", img: "/action/Russell_Crowe.jpg" },
-            { name: "Joaquin Phoenix", role: "Commodus", img: "/action/Joaquin_Phoenix.jpg" },
+            { name: "Russell Crowe", role: "Maximus", img: "./action/Russell_Crowe.jpg" },
+            { name: "Joaquin Phoenix", role: "Commodus", img: "./action/Joaquin_Phoenix.jpg" },
         ]
     },
     inception: {
@@ -65,8 +65,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/YoHD9XEInc0",
         ott: "https://www.netflix.com/in/title/70131314",
         cast: [
-            { name: "Leonardo DiCaprio", role: "Dom Cobb", img: "/action/Leonardo_DiCaprio.jpg" },
-            { name: "Joseph Gordon-Levitt", role: "Arthur", img: "/action/Joseph_Gordon-Levitt.jpg" },
+            { name: "Leonardo DiCaprio", role: "Dom Cobb", img: "./action/Leonardo_DiCaprio.jpg" },
+            { name: "Joseph Gordon-Levitt", role: "Arthur", img: "./action/Joseph_Gordon-Levitt.jpg" },
         ]
     },
     johnWick: {
@@ -75,8 +75,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/2AUmvWm5ZDQ",
         ott: "https://www.primevideo.com/detail/John-Wick/0O2TV0WGM2J40Q4I1LQHV3M7QA",
         cast: [
-            { name: "Keanu Reeves", role: "John Wick", img: "/action/Keanu_Reeves.jpg" },
-            { name: "Michael Nyqvist", role: "Viggo Tarasov", img: "/action/Michael_Nyqvist.jpg" },
+            { name: "Keanu Reeves", role: "John Wick", img: "./action/Keanu_Reeves.jpg" },
+            { name: "Michael Nyqvist", role: "Viggo Tarasov", img: "./action/Michael_Nyqvist.jpg" },
         ]
     },
     raidRedemption: {
@@ -85,8 +85,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/m6Q7KnXpNOg",
         ott: "https://www.primevideo.com/detail/The-Raid-Redemption/0JXNC8XQ051ON4M209O796GGQZ",
         cast: [
-            { name: "Iko Uwais", role: "Rama", img: "/action/Iko_Uwais.jpg" },
-            { name: "Yayan Ruhian", role: "Mad Dog", img: "/action/Yayan_Ruhian.jpg" },
+            { name: "Iko Uwais", role: "Rama", img: "./action/Iko_Uwais.jpg" },
+            { name: "Yayan Ruhian", role: "Mad Dog", img: "./action/Yayan_Ruhian.jpg" },
         ]
     },
     killBillVolume1: {
@@ -95,8 +95,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/7kSuas6mRpk",
         ott: "https://www.primevideo.com/detail/Kill-Bill-Volume-1/0J3PELLU8KXU3JWDRLFDKMMPO0",
         cast: [
-            { name: "Uma Thurman", role: "The Bride", img: "/action/Uma_Thurman.jpg" },
-            { name: "Lucy Liu", role: "O-Ren Ishii", img: "/action/Lucy_Liu.jpg" },
+            { name: "Uma Thurman", role: "The Bride", img: "./action/Uma_Thurman.jpg" },
+            { name: "Lucy Liu", role: "O-Ren Ishii", img: "./action/Lucy_Liu.jpg" },
         ]
     }    
 };

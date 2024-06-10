@@ -5,8 +5,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/Y2OLRrocn3s",
         ott: "https://www.netflix.com/title/70270360",
         cast: [
-            { name: "Adèle Exarchopoulos", role: "Adèle", img: "/18plus/Adele_Exarchopoulos.jpg" },
-            { name: "Léa Seydoux", role: "Emma", img: "/18plus/Lea_Seydoux.jpg" },
+            { name: "Adèle Exarchopoulos", role: "Adèle", img: "./18plus/Adele_Exarchopoulos.jpg" },
+            { name: "Léa Seydoux", role: "Emma", img: "./18plus/Lea_Seydoux.jpg" },
         ]
     },
     nymphomaniac: {
@@ -15,8 +15,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/LGl17KKe2YY",
         ott: "https://www.primevideo.com/detail/0FTNYYA5JIXR9PGRFQY5Y3U5Z0",
         cast: [
-            { name: "Charlotte Gainsbourg", role: "Joe", img: "/18plus/Charlotte_Gainsbourg.jpg" },
-            { name: "Stacy Martin", role: "Young Joe", img: "/18plus/Stacy_Martin.jpg" },
+            { name: "Charlotte Gainsbourg", role: "Joe", img: "./18plus/Charlotte_Gainsbourg.jpg" },
+            { name: "Stacy Martin", role: "Young Joe", img: "./18plus/Stacy_Martin.jpg" },
         ]
     },
     eyesWideShut: {
@@ -25,8 +25,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/YEfyfcEdW4Y",
         ott: "https://www.primevideo.com/detail/0TN4HMCQFKXOBL0YNWCI2H7C8N",
         cast: [
-            { name: "Tom Cruise", role: "Dr. Bill Harford", img: "/18plus/Tom_Cruise.jpg" },
-            { name: "Nicole Kidman", role: "Alice Harford", img: "/18plus/Nicole_Kidman.jpg" },
+            { name: "Tom Cruise", role: "Dr. Bill Harford", img: "./18plus/Tom_Cruise.jpg" },
+            { name: "Nicole Kidman", role: "Alice Harford", img: "./18plus/Nicole_Kidman.jpg" },
         ]
     },
     irreversible: {
@@ -35,8 +35,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/zQpNFOA1Lpo",
         ott: "https://www.primevideo.com/detail/0IRER9FKHJ9NR6T8RYYSXGAY2O",
         cast: [
-            { name: "Monica Bellucci", role: "Alex", img: "/18plus/Monica_Bellucci.jpg" },
-            { name: "Vincent Cassel", role: "Marcus", img: "/18plus/Vincent_Cassel.jpg" },
+            { name: "Monica Bellucci", role: "Alex", img: "./18plus/Monica_Bellucci.jpg" },
+            { name: "Vincent Cassel", role: "Marcus", img: "./18plus/Vincent_Cassel.jpg" },
         ]
     },
     shame: {
@@ -45,8 +45,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/tPSB_f0JVVM",
         ott: "https://www.primevideo.com/detail/0I1IISGOFTSY8JH0TWIIF2V1X4",
         cast: [
-            { name: "Michael Fassbender", role: "Brandon Sullivan", img: "/18plus/Michael_Fassbender.jpg" },
-            { name: "Carey Mulligan", role: "Sissy Sullivan", img: "/18plus/Carey_Mulligan.jpg" },
+            { name: "Michael Fassbender", role: "Brandon Sullivan", img: "./18plus/Michael_Fassbender.jpg" },
+            { name: "Carey Mulligan", role: "Sissy Sullivan", img: "./18plus/Carey_Mulligan.jpg" },
         ]
     },
     springBreakers: {
@@ -55,11 +55,11 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/R8RfvOwMbbA",
         ott: "https://www.primevideo.com/detail/0LTCX6OZT4N7M7C7PV9SKOZJ9B",
         cast: [
-            { name: "James Franco", role: "Alien", img: "/18plus/James_Franco.jpg" },
-            { name: "Vanessa Hudgens", role: "Candy", img: "/18plus/Vanessa_Hudgens.jpg" },
-            { name: "Selena Gomez", role: "Faith", img: "/18plus/Selena_Gomez.jpg" },
-            { name: "Ashley Benson", role: "Brit", img: "/18plus/Ashley_Benson.jpg" },
-            { name: "Rachel Korine", role: "Cotty", img: "/18plus/Rachel_Korine.jpg" },
+            { name: "James Franco", role: "Alien", img: "./18plus/James_Franco.jpg" },
+            { name: "Vanessa Hudgens", role: "Candy", img: "./18plus/Vanessa_Hudgens.jpg" },
+            { name: "Selena Gomez", role: "Faith", img: "./18plus/Selena_Gomez.jpg" },
+            { name: "Ashley Benson", role: "Brit", img: "./18plus/Ashley_Benson.jpg" },
+            { name: "Rachel Korine", role: "Cotty", img: "./18plus/Rachel_Korine.jpg" },
         ]
     },
     antichrist: {
@@ -68,8 +68,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/wA85mnlMYvw",
         ott: "https://www.primevideo.com/detail/0RLSBQHGY9Z4SKNYISGGZZ9FJQ",
         cast: [
-            { name: "Willem Dafoe", role: "He", img: "/18plus/Willem_Dafoe.jpg" },
-            { name: "Charlotte Gainsbourg", role: "She", img: "/18plus/Charlotte_Gainsbourg.jpg" },
+            { name: "Willem Dafoe", role: "He", img: "./18plus/Willem_Dafoe.jpg" },
+            { name: "Charlotte Gainsbourg", role: "She", img: "./18plus/Charlotte_Gainsbourg.jpg" },
         ]
     },
     basicInstinct: {
@@ -78,8 +78,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/4CVlSsS-rwQ",
         ott: "https://www.primevideo.com/detail/0M50Y1T0R8DQGYY7Y9P7LTMD2P",
         cast: [
-            { name: "Michael Douglas", role: "Det. Nick Curran", img: "/18plus/Michael_Douglas.jpg" },
-            { name: "Sharon Stone", role: "Catherine Tramell", img: "/18plus/Sharon_Stone.jpg" },
+            { name: "Michael Douglas", role: "Det. Nick Curran", img: "./18plus/Michael_Douglas.jpg" },
+            { name: "Sharon Stone", role: "Catherine Tramell", img: "./18plus/Sharon_Stone.jpg" },
         ]
     },
     love: {
@@ -88,9 +88,9 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/j94BLcsPyeE",
         ott: "https://www.netflix.com/title/80054074",
         cast: [
-            { name: "Karl Glusman", role: "Murphy", img: "/18plus/Karl_Glusman.jpg" },
-            { name: "Aomi Muyock", role: "Electra", img: "/18plus/Aomi_Muyock.jpg" },
-            { name: "Klara Kristin", role: "Omi", img: "/18plus/Klara_Kristin.jpg" },
+            { name: "Karl Glusman", role: "Murphy", img: "./18plus/Karl_Glusman.jpg" },
+            { name: "Aomi Muyock", role: "Electra", img: "./18plus/Aomi_Muyock.jpg" },
+            { name: "Klara Kristin", role: "Omi", img: "./18plus/Klara_Kristin.jpg" },
         ]
     },
     theDreamers: {
@@ -99,9 +99,9 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/Dy0mi7NSM3c",
         ott: "https://www.primevideo.com/detail/0H7S4WOD4ZQEDP6AMJ0KQPP5FH",
         cast: [
-            { name: "Michael Pitt", role: "Matthew", img: "/18plus/Michael_Pitt.jpg" },
-            { name: "Eva Green", role: "Isabelle", img: "/18plus/Eva_Green.jpg" },
-            { name: "Louis Garrel", role: "Theo", img: "/18plus/Louis_Garrel.jpg" },
+            { name: "Michael Pitt", role: "Matthew", img: "./18plus/Michael_Pitt.jpg" },
+            { name: "Eva Green", role: "Isabelle", img: "./18plus/Eva_Green.jpg" },
+            { name: "Louis Garrel", role: "Theo", img: "./18plus/Louis_Garrel.jpg" },
         ]
     }
 };

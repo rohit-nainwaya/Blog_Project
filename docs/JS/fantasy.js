@@ -5,8 +5,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/V75dMMIW2B4",
         ott: "https://www.primevideo.com/detail/The-Lord-of-the-Rings-The-Fellowship-of-the-Ring/0TFTBBAYAUINPG47JWI8PZGHKB",
         cast: [
-            { name: "Elijah Wood", role: "Frodo Baggins", img: "/fantasy/Elijah_Wood.jpg" },
-            { name: "Ian McKellen", role: "Gandalf", img: "/fantasy/Ian_McKellen.jpg" },
+            { name: "Elijah Wood", role: "Frodo Baggins", img: "./fantasy/Elijah_Wood.jpg" },
+            { name: "Ian McKellen", role: "Gandalf", img: "./fantasy/Ian_McKellen.jpg" },
         ]
     },
     gameOfThrones: {
@@ -15,8 +15,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/gcTkNV5Vg1E",
         ott: "https://www.jiocinema.com/tv-shows/game-of-thrones/3739477",
         cast: [
-            { name: "Emilia Clarke", role: "Daenerys Targaryen", img: "/fantasy/Emilia_Clarke.jpg" },
-            { name: "Kit Harington", role: "Jon Snow", img: "/fantasy/Kit_Harington.jpg" },
+            { name: "Emilia Clarke", role: "Daenerys Targaryen", img: "./fantasy/Emilia_Clarke.jpg" },
+            { name: "Kit Harington", role: "Jon Snow", img: "./fantasy/Kit_Harington.jpg" },
         ]
     },
     harryPotter: {
@@ -25,8 +25,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/VyHV0BRtdxo",
         ott: "https://www.primevideo.com/detail/Harry-Potter-and-the-Sorcerers-Stone/0N8WYH0W6L7Q0ODHGQCHMMRH4R",
         cast: [
-            { name: "Daniel Radcliffe", role: "Harry Potter", img: "/fantasy/Daniel_Radcliffe.jpg" },
-            { name: "Emma Watson", role: "Hermione Granger", img: "/fantasy/Emma_Watson.jpg" },
+            { name: "Daniel Radcliffe", role: "Harry Potter", img: "./fantasy/Daniel_Radcliffe.jpg" },
+            { name: "Emma Watson", role: "Hermione Granger", img: "./fantasy/Emma_Watson.jpg" },
         ]
     },
     narnia: {
@@ -35,8 +35,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/pYcGFLgJ8Uo",
         ott: "https://www.hotstar.com/in/movies/the-chronicles-of-narnia-the-lion-the-witch-and-the-wardrobe/1260018747",
         cast: [
-            { name: "Georgie Henley", role: "Lucy Pevensie", img: "/fantasy/Georgie_Henley.jpg" },
-            { name: "Tilda Swinton", role: "White Witch", img: "/fantasy/Tilda_Swinton.jpg" },
+            { name: "Georgie Henley", role: "Lucy Pevensie", img: "./fantasy/Georgie_Henley.jpg" },
+            { name: "Tilda Swinton", role: "White Witch", img: "./fantasy/Tilda_Swinton.jpg" },
         ]
     },
     theWitcher: {
@@ -45,8 +45,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/ndl1W4ltcmg",
         ott: "https://www.netflix.com/in/title/80189685",
         cast: [
-            { name: "Henry Cavill", role: "Geralt of Rivia", img: "/fantasy/Henry_Cavill.jpg" },
-            { name: "Anya Chalotra", role: "Yennefer of Vengerberg", img: "/fantasy/Anya_Chalotra.jpg" },
+            { name: "Henry Cavill", role: "Geralt of Rivia", img: "./fantasy/Henry_Cavill.jpg" },
+            { name: "Anya Chalotra", role: "Yennefer of Vengerberg", img: "./fantasy/Anya_Chalotra.jpg" },
         ]
     },
     pansLabyrinth: {
@@ -55,8 +55,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/EqYiSlkvRuw",
         ott: "https://www.primevideo.com/detail/Pans-Labyrinth/0PHYHNH7QTO43JP99DB46ULUYH",
         cast: [
-            { name: "Ivana Baquero", role: "Ofelia", img: "/fantasy/Ivana_Baquero.jpg" },
-            { name: "Sergi López", role: "Captain Vidal", img: "/fantasy/Sergi_Lopez.jpg" },
+            { name: "Ivana Baquero", role: "Ofelia", img: "./fantasy/Ivana_Baquero.jpg" },
+            { name: "Sergi López", role: "Captain Vidal", img: "./fantasy/Sergi_Lopez.jpg" },
         ]
     },
     strangerThings: {
@@ -65,8 +65,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/mnd7sFt5c3A",
         ott: "https://www.netflix.com/in/title/80057281",
         cast: [
-            { name: "Millie Bobby Brown", role: "Eleven", img: "/fantasy/Millie_Bobby_Brown.jpg" },
-            { name: "Finn Wolfhard", role: "Mike Wheeler", img: "/fantasy/Finn_Wolfhard.jpg" },
+            { name: "Millie Bobby Brown", role: "Eleven", img: "./fantasy/Millie_Bobby_Brown.jpg" },
+            { name: "Finn Wolfhard", role: "Mike Wheeler", img: "./fantasy/Finn_Wolfhard.jpg" },
         ]
     },
     elite: {
@@ -75,8 +75,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/QNwhAdrdwp0",
         ott: "https://www.netflix.com/in/title/80200942",
         cast: [
-            { name: "Itzan Escamilla", role: "Samuel García", img: "/fantasy/Itzan_Escamilla.jpg" },
-            { name: "Miguel Bernardeau", role: "Guzmán Nunier Osuna", img: "/fantasy/Miguel_Bernardeau.jpg" },
+            { name: "Itzan Escamilla", role: "Samuel García", img: "./fantasy/Itzan_Escamilla.jpg" },
+            { name: "Miguel Bernardeau", role: "Guzmán Nunier Osuna", img: "./fantasy/Miguel_Bernardeau.jpg" },
         ]
     },
     stardust: {
@@ -85,8 +85,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/VfYBKDyF-Dk",
         ott: "https://www.primevideo.com/detail/Stardust/0T60W9A0HXX2I6VJVX87K0K7V2",
         cast: [
-            { name: "Charlie Cox", role: "Tristan", img: "/fantasy/Charlie_Cox.jpg" },
-            { name: "Claire Danes", role: "Yvaine", img: "/fantasy/Claire_Danes.jpg" },
+            { name: "Charlie Cox", role: "Tristan", img: "./fantasy/Charlie_Cox.jpg" },
+            { name: "Claire Danes", role: "Yvaine", img: "./fantasy/Claire_Danes.jpg" },
         ]
     },
     shadowAndBone: {
@@ -95,8 +95,8 @@ const fantasyData = {
         trailer: "https://www.youtube.com/embed/b1WHQTbJ7vE",
         ott: "https://www.netflix.com/in/title/80236319",
         cast: [
-            { name: "Jessie Mei Li", role: "Alina Starkov", img: "/fantasy/Jessie_Mei_Li.jpg" },
-            { name: "Ben Barnes", role: "General Kirigan", img: "/fantasy/Ben_Barnes.jpg" },
+            { name: "Jessie Mei Li", role: "Alina Starkov", img: "./fantasy/Jessie_Mei_Li.jpg" },
+            { name: "Ben Barnes", role: "General Kirigan", img: "./fantasy/Ben_Barnes.jpg" },
         ]
     },
 };

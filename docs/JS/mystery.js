@@ -5,8 +5,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/oiXdPolca5w",
         ott: "https://www.primevideo.com/detail/The-Usual-Suspects/0R90T0VV5SXH4Z08RXKR1RRLX9",
         cast: [
-            { name: "Kevin Spacey", role: "Roger 'Verbal' Kint", img: "/mystery/Kevin_Spacey.jpg" },
-            { name: "Gabriel Byrne", role: "Dean Keaton", img: "/mystery/Gabriel_Byrne.jpg" },
+            { name: "Kevin Spacey", role: "Roger 'Verbal' Kint", img: "./mystery/Kevin_Spacey.jpg" },
+            { name: "Gabriel Byrne", role: "Dean Keaton", img: "./mystery/Gabriel_Byrne.jpg" },
         ]
     },
     se7en: {
@@ -15,8 +15,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/zwYJg0mj2r4",
         ott: "https://www.primevideo.com/detail/Se7en/0R90T0VBJHXZKP20V35LRYSSG0",
         cast: [
-            { name: "Brad Pitt", role: "Detective David Mills", img: "/mystery/Brad_Pitt.jpg" },
-            { name: "Morgan Freeman", role: "Detective William Somerset", img: "/mystery/Morgan_Freeman.jpg" },
+            { name: "Brad Pitt", role: "Detective David Mills", img: "./mystery/Brad_Pitt.jpg" },
+            { name: "Morgan Freeman", role: "Detective William Somerset", img: "./mystery/Morgan_Freeman.jpg" },
         ]
     },
     goneGirl: {
@@ -25,8 +25,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/2-_-1nJf8Vg",
         ott: "https://www.primevideo.com/detail/Gone-Girl/0TIFFW7TZT2EC9F0J28JZBIM2T",
         cast: [
-            { name: "Rosamund Pike", role: "Amy Dunne", img: "/mystery/Rosamund_Pike.jpg" },
-            { name: "Ben Affleck", role: "Nick Dunne", img: "/mystery/Ben_Affleck.jpg" },
+            { name: "Rosamund Pike", role: "Amy Dunne", img: "./mystery/Rosamund_Pike.jpg" },
+            { name: "Ben Affleck", role: "Nick Dunne", img: "./mystery/Ben_Affleck.jpg" },
         ]
     },
     shutterIsland: {
@@ -35,8 +35,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/5iaYLCiq5RM",
         ott: "https://www.primevideo.com/detail/Shutter-Island/0O2TV0LDYQI1C4MTHP4QKMLAT0",
         cast: [
-            { name: "Leonardo DiCaprio", role: "Teddy Daniels", img: "/mystery/Leonardo_DiCaprio.jpg" },
-            { name: "Mark Ruffalo", role: "Chuck Aule", img: "/mystery/Mark_Ruffalo.jpg" },
+            { name: "Leonardo DiCaprio", role: "Teddy Daniels", img: "./mystery/Leonardo_DiCaprio.jpg" },
+            { name: "Mark Ruffalo", role: "Chuck Aule", img: "./mystery/Mark_Ruffalo.jpg" },
         ]
     },
     thePrestige: {
@@ -45,8 +45,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/ijXruSzfGEc",
         ott: "https://www.primevideo.com/detail/The-Prestige/0JXNC8XQZVP7LHDXOUOHUJ5ZBM",
         cast: [
-            { name: "Hugh Jackman", role: "Robert Angier", img: "/mystery/Hugh_Jackman.jpg" },
-            { name: "Christian Bale", role: "Alfred Borden", img: "/mystery/Christian_Bale.jpg" },
+            { name: "Hugh Jackman", role: "Robert Angier", img: "./mystery/Hugh_Jackman.jpg" },
+            { name: "Christian Bale", role: "Alfred Borden", img: "./mystery/Christian_Bale.jpg" },
         ]
     },
     memento: {
@@ -55,8 +55,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/0vS0E9bBSL0",
         ott: "https://www.primevideo.com/detail/Memento/0GIOPD36Y1MMQAN6YMWQEGAM61",
         cast: [
-            { name: "Guy Pearce", role: "Leonard Shelby", img: "/mystery/Guy_Pearce.jpg" },
-            { name: "Carrie-Anne Moss", role: "Natalie", img: "/mystery/Carrie-Anne_Moss.jpg" },
+            { name: "Guy Pearce", role: "Leonard Shelby", img: "./mystery/Guy_Pearce.jpg" },
+            { name: "Carrie-Anne Moss", role: "Natalie", img: "./mystery/Carrie-Anne_Moss.jpg" },
         ]
     },
     zodiac: {
@@ -65,8 +65,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/yNncHPl1UXg",
         ott: "https://www.primevideo.com/detail/Zodiac/0KRHVC48QB9Z3DXLC3KUW9ETZA",
         cast: [
-            { name: "Jake Gyllenhaal", role: "Robert Graysmith", img: "/mystery/Jake_Gyllenhaal.jpg" },
-            { name: "Mark Ruffalo", role: "Inspector David Toschi", img: "/mystery/Mark_Ruffalo.jpg" },
+            { name: "Jake Gyllenhaal", role: "Robert Graysmith", img: "./mystery/Jake_Gyllenhaal.jpg" },
+            { name: "Mark Ruffalo", role: "Inspector David Toschi", img: "./mystery/Mark_Ruffalo.jpg" },
         ]
     },
     prisoners: {
@@ -75,8 +75,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/bpXfcTF6iVk",
         ott: "https://www.primevideo.com/detail/Prisoners/0FFOVKGP4NKLF5W9GUXCQK0KJY",
         cast: [
-            { name: "Hugh Jackman", role: "Keller Dover", img: "/mystery/Hugh_Jackman.jpg" },
-            { name: "Jake Gyllenhaal", role: "Detective Loki", img: "/mystery/Jake_Gyllenhaal.jpg" },
+            { name: "Hugh Jackman", role: "Keller Dover", img: "./mystery/Hugh_Jackman.jpg" },
+            { name: "Jake Gyllenhaal", role: "Detective Loki", img: "./mystery/Jake_Gyllenhaal.jpg" },
         ]
     },
     theGirlwiththeDragonTattoo: {
@@ -85,8 +85,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/YKWXEfXGWtA",
         ott: "https://www.primevideo.com/detail/The-Girl-with-the-Dragon-Tattoo/0PYMWHT8J7F4YI8DGYMZB7P3VS",
         cast: [
-            { name: "Daniel Craig", role: "Mikael Blomkvist", img: "/mystery/Daniel_Craig.jpg" },
-            { name: "Rooney Mara", role: "Lisbeth Salander", img: "/mystery/Rooney_Mara.jpg" },
+            { name: "Daniel Craig", role: "Mikael Blomkvist", img: "./mystery/Daniel_Craig.jpg" },
+            { name: "Rooney Mara", role: "Lisbeth Salander", img: "./mystery/Rooney_Mara.jpg" },
         ]
     },
     identity: {
@@ -95,8 +95,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/US5PEPPCxqE",
         ott: "https://www.primevideo.com/detail/Identity/0QG90I0N8W3QZQ2TMTN92Z95PQ",
         cast: [
-            { name: "John Cusack", role: "Ed", img: "/mystery/John_Cusack.jpg" },
-            { name: "Ray Liotta", role: "Rhodes", img: "/mystery/Ray_Liotta.jpg" },
+            { name: "John Cusack", role: "Ed", img: "./mystery/John_Cusack.jpg" },
+            { name: "Ray Liotta", role: "Rhodes", img: "./mystery/Ray_Liotta.jpg" },
         ]
     }
 };

@@ -5,8 +5,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/BkL9l7qovsE",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Humphrey Bogart", role: "Rick Blaine", img: "/romance/Humphrey_Bogart.jpg" },
-            { name: "Ingrid Bergman", role: "Ilsa Lund", img: "/romance/Ingrid_Bergman.jpg" },
+            { name: "Humphrey Bogart", role: "Rick Blaine", img: "./romance/Humphrey_Bogart.jpg" },
+            { name: "Ingrid Bergman", role: "Ilsa Lund", img: "./romance/Ingrid_Bergman.jpg" },
         ]
     },
     titanic: {
@@ -15,8 +15,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/kVrqfYjkTdQ",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Leonardo DiCaprio", role: "Jack Dawson", img: "/romance/Leonardo_DiCaprio.jpg" },
-            { name: "Kate Winslet", role: "Rose DeWitt Bukater", img: "/romance/Kate_Winslet.jpg" },
+            { name: "Leonardo DiCaprio", role: "Jack Dawson", img: "./romance/Leonardo_DiCaprio.jpg" },
+            { name: "Kate Winslet", role: "Rose DeWitt Bukater", img: "./romance/Kate_Winslet.jpg" },
         ]
     },
     prideAndPrejudice: {
@@ -25,8 +25,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/1dYv5u6v55Y",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Keira Knightley", role: "Elizabeth Bennet", img: "/romance/Keira_Knightley.jpg" },
-            { name: "Matthew Macfadyen", role: "Mr. Darcy", img: "/romance/Matthew_Macfadyen.jpg" },
+            { name: "Keira Knightley", role: "Elizabeth Bennet", img: "./romance/Keira_Knightley.jpg" },
+            { name: "Matthew Macfadyen", role: "Mr. Darcy", img: "./romance/Matthew_Macfadyen.jpg" },
         ]
     },
     theNotebook: {
@@ -35,8 +35,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/FC6biTjEyZw",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Ryan Gosling", role: "Noah Calhoun", img: "/romance/Ryan_Gosling.jpg" },
-            { name: "Rachel McAdams", role: "Allie Hamilton", img: "/romance/Rachel_McAdams.jpg" },
+            { name: "Ryan Gosling", role: "Noah Calhoun", img: "./romance/Ryan_Gosling.jpg" },
+            { name: "Rachel McAdams", role: "Allie Hamilton", img: "./romance/Rachel_McAdams.jpg" },
         ]
     },
     laLaLand: {
@@ -45,8 +45,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/0pdqf4P9MB8",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Ryan Gosling", role: "Sebastian", img: "/romance/Ryan_Gosling.jpg" },
-            { name: "Emma Stone", role: "Mia", img: "/romance/Emma_Stone.jpg" },
+            { name: "Ryan Gosling", role: "Sebastian", img: "./romance/Ryan_Gosling.jpg" },
+            { name: "Emma Stone", role: "Mia", img: "./romance/Emma_Stone.jpg" },
         ]
     },
     goneWithTheWind: {
@@ -55,8 +55,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/qLj_wQR1_pM",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Clark Gable", role: "Rhett Butler", img: "/romance/Clark_Gable.jpg" },
-            { name: "Vivien Leigh", role: "Scarlett O'Hara", img: "/romance/Vivien_Leigh.jpg" },
+            { name: "Clark Gable", role: "Rhett Butler", img: "./romance/Clark_Gable.jpg" },
+            { name: "Vivien Leigh", role: "Scarlett O'Hara", img: "./romance/Vivien_Leigh.jpg" },
         ]
     },
     eternalSunshine: {
@@ -65,8 +65,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/quuMv7cGUn0",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Jim Carrey", role: "Joel Barish", img: "/romance/Jim_Carrey.jpg" },
-            { name: "Kate Winslet", role: "Clementine Kruczynski", img: "/romance/Kate_Winslet.jpg" },
+            { name: "Jim Carrey", role: "Joel Barish", img: "./romance/Jim_Carrey.jpg" },
+            { name: "Kate Winslet", role: "Clementine Kruczynski", img: "./romance/Kate_Winslet.jpg" },
         ]
     },
     whenHarryMetSally: {
@@ -75,8 +75,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/V8DgDmUHVto",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Billy Crystal", role: "Harry Burns", img: "/romance/Billy_Crystal.jpg" },
-            { name: "Meg Ryan", role: "Sally Albright", img: "/romance/Meg_Ryan.jpg" },
+            { name: "Billy Crystal", role: "Harry Burns", img: "./romance/Billy_Crystal.jpg" },
+            { name: "Meg Ryan", role: "Sally Albright", img: "./romance/Meg_Ryan.jpg" },
         ]
     },
     romanHoliday: {
@@ -85,8 +85,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/1cQh1ccqu8M",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Audrey Hepburn", role: "Princess Ann", img: "/romance/Audrey_Hepburn.jpg" },
-            { name: "Gregory Peck", role: "Joe Bradley", img: "/romance/Gregory_Peck.jpg" },
+            { name: "Audrey Hepburn", role: "Princess Ann", img: "./romance/Audrey_Hepburn.jpg" },
+            { name: "Gregory Peck", role: "Joe Bradley", img: "./romance/Gregory_Peck.jpg" },
         ]
     },
     beforeSunrise: {
@@ -95,8 +95,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/25v7N34d5HE",
         ott: "https://www.hbomax.com/feature/urn:hbo:feature:GXdu3lg5Eph7CZQEAAAAN",
         cast: [
-            { name: "Ethan Hawke", role: "Jesse", img: "/romance/Ethan_Hawke.jpg" },
-            { name: "Julie Delpy", role: "Celine", img: "/romance/Julie_Delpy.jpg" },
+            { name: "Ethan Hawke", role: "Jesse", img: "./romance/Ethan_Hawke.jpg" },
+            { name: "Julie Delpy", role: "Celine", img: "./romance/Julie_Delpy.jpg" },
         ]
     }
 };

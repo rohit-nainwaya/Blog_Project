@@ -5,9 +5,9 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/SGWvwjZ0eDc",
         ott: "https://www.primevideo.com/detail/The-Departed/0R9B4VS2TJGIDJO7D60W9Y12XK",
         cast: [
-            { name: "Leonardo DiCaprio", role: "Billy Costigan", img: "/thriller/Leonardo_DiCaprio.jpg" },
-            { name: "Matt Damon", role: "Colin Sullivan", img: "/thriller/Matt_Damon.jpg" },
-            { name: "Jack Nicholson", role: "Frank Costello", img: "/thriller/Jack_Nicholson.jpg" }
+            { name: "Leonardo DiCaprio", role: "Billy Costigan", img: "./thriller/Leonardo_DiCaprio.jpg" },
+            { name: "Matt Damon", role: "Colin Sullivan", img: "./thriller/Matt_Damon.jpg" },
+            { name: "Jack Nicholson", role: "Frank Costello", img: "./thriller/Jack_Nicholson.jpg" }
         ]
     },
     noCountryForOldMen: {
@@ -16,9 +16,9 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/38A__WT3-o0",
         ott: "https://www.primevideo.com/detail/No-Country-for-Old-Men/0IVBKTOBBF85AT6ZKLMJL6NMO3",
         cast: [
-            { name: "Tommy Lee Jones", role: "Sheriff Ed Tom Bell", img: "/thriller/Tommy_Lee_Jones.jpg" },
-            { name: "Javier Bardem", role: "Anton Chigurh", img: "/thriller/Javier_Bardem.jpg" },
-            { name: "Josh Brolin", role: "Llewelyn Moss", img: "/thriller/Josh_Brolin.jpg" }
+            { name: "Tommy Lee Jones", role: "Sheriff Ed Tom Bell", img: "./thriller/Tommy_Lee_Jones.jpg" },
+            { name: "Javier Bardem", role: "Anton Chigurh", img: "./thriller/Javier_Bardem.jpg" },
+            { name: "Josh Brolin", role: "Llewelyn Moss", img: "./thriller/Josh_Brolin.jpg" }
         ]
     },
     thePrestige: {
@@ -27,9 +27,9 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/A706FUW1FIc",
         ott: "https://www.netflix.com/in/title/70044680",
         cast: [
-            { name: "Hugh Jackman", role: "Robert Angier", img: "/thriller/Hugh_Jackman.jpg" },
-            { name: "Christian Bale", role: "Alfred Borden", img: "/thriller/Christian_Bale.jpg" },
-            { name: "Michael Caine", role: "Cutter", img: "/thriller/Michael_Caine.jpg" }
+            { name: "Hugh Jackman", role: "Robert Angier", img: "./thriller/Hugh_Jackman.jpg" },
+            { name: "Christian Bale", role: "Alfred Borden", img: "./thriller/Christian_Bale.jpg" },
+            { name: "Michael Caine", role: "Cutter", img: "./thriller/Michael_Caine.jpg" }
         ]
     },
     theSixthSense: {
@@ -38,8 +38,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/VG9AGf66tXM",
         ott: "https://www.netflix.com/in/title/60022584",
         cast: [
-            { name: "Bruce Willis", role: "Dr. Malcolm Crowe", img: "/thriller/Bruce_Willis.jpg" },
-            { name: "Haley Joel Osment", role: "Cole Sear", img: "/thriller/Haley_Joel_Osment.jpg" }
+            { name: "Bruce Willis", role: "Dr. Malcolm Crowe", img: "./thriller/Bruce_Willis.jpg" },
+            { name: "Haley Joel Osment", role: "Cole Sear", img: "./thriller/Haley_Joel_Osment.jpg" }
         ]
     },
     heat: {
@@ -48,8 +48,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/0xbBLJ1WGwQ",
         ott: "https://www.primevideo.com/detail/Heat/0SXK5RU8UNN4TEYR36OZ0VIQ4C",
         cast: [
-            { name: "Al Pacino", role: "Vincent Hanna", img: "/thriller/Al_Pacino.jpg" },
-            { name: "Robert De Niro", role: "Neil McCauley", img: "/thriller/Robert_De_Niro.jpg" }
+            { name: "Al Pacino", role: "Vincent Hanna", img: "./thriller/Al_Pacino.jpg" },
+            { name: "Robert De Niro", role: "Neil McCauley", img: "./thriller/Robert_De_Niro.jpg" }
         ]
     },
 }
