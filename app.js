@@ -3,70 +3,70 @@ const app = express();
 const port = 8080;
 
 const path = require("path");
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 app.get('/', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'index.html'));
 });
 
 app.get('/action', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'action.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'action.html'));
 });
 
 app.get('/comedy', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'comedy.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'comedy.html'));
 });
 
 app.get('/drama', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'drama.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'drama.html'));
 });
 
 app.get('/fantasy', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'fantasy.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'fantasy.html'));
 });
 
 app.get('/horror', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'horror.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'horror.html'));
 });
 
 app.get('/mystery', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'mystery.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'mystery.html'));
 });
 
 app.get('/romance', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'romance.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'romance.html'));
 });
 
 app.get('/adult', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'adult.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'adult.html'));
 });
 
 app.get('/sci-fi', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'sci-fi.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'sci-fi.html'));
 });
 
 app.get('/thriller', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'thriller.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'thriller.html'));
 });
 
 app.get('/documentary', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'documentary.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'documentary.html'));
 });
 
 app.get('/animation', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'animation.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'animation.html'));
 });
 
 app.get('/musical', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'musical.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'musical.html'));
 });
 
 app.get('/western', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'western.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'western.html'));
 });
 
 app.get('/biographical', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'public', 'biographical.html'));
+    res.sendFile(path.join(__dirname, 'docs', 'biographical.html'));
 });
 
 app.listen(port, () =>{
