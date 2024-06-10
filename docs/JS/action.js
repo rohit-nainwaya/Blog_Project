@@ -5,8 +5,8 @@ const movieData = {
         trailer: "https://www.youtube.com/embed/2TQ-pOvI6Xo",
         ott: "https://www.primevideo.com/region/eu/detail/Die-Hard/0T1U9Y0553WS3CC7RKXTC9B09M",
         cast: [
-            { name: "Bruce Willis", role: "John McClane", img: "/action/Bruce_Willis.jpg" },
-            { name: "Alan Rickman", role: "Hans Gruber", img: "/action/Alan_Rickman.jpg" },
+            { name: "Bruce Willis", role: "John McClane", img: "./action/Bruce_Willis.jpg" },
+            { name: "Alan Rickman", role: "Hans Gruber", img: "./action/Alan_Rickman.jpg" },
         ]
     },
     madMax: {
