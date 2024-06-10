@@ -5,7 +5,7 @@ const port = 8080;
 const path = require("path");
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) =>{
+app.get('/rohit-nainwaya.github.io/Blog_Project/', (req, res) =>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
