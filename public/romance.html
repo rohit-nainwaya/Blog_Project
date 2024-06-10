@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Romance Movies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="home-icon">
+                <a href="/" id="home" onclick="goHome()"><i class="fas fa-home"></i></a>
+            </div>            
+            <a class="navbar-brand mx-auto" href="#">Top 10 Romance Movies</a>
+        </nav>
+        <div class="container mt-4">
+            <ol id="movieList" class="list-group">
+                <li class="list-group-item" id="1"><a href="#" onclick="showMovieDetails('casablanca')">Casablanca (1942)</a></li>
+                <li class="list-group-item" id="2"><a href="#" onclick="showMovieDetails('titanic')">Titanic (1997)</a></li>
+                <li class="list-group-item" id="3"><a href="#" onclick="showMovieDetails('prideAndPrejudice')">Pride and Prejudice (2005)</a></li>
+                <li class="list-group-item" id="4"><a href="#" onclick="showMovieDetails('theNotebook')">The Notebook (2004)</a></li>
+                <li class="list-group-item" id="5"><a href="#" onclick="showMovieDetails('laLaLand')">La La Land (2016)</a></li>
+                <li class="list-group-item" id="6"><a href="#" onclick="showMovieDetails('goneWithTheWind')">Gone with the Wind (1939)</a></li>
+                <li class="list-group-item" id="7"><a href="#" onclick="showMovieDetails('eternalSunshine')">Eternal Sunshine of the Spotless Mind (2004)</a></li>
+                <li class="list-group-item" id="8"><a href="#" onclick="showMovieDetails('whenHarryMetSally')">When Harry Met Sally (1989)</a></li>
+                <li class="list-group-item" id="9"><a href="#" onclick="showMovieDetails('romanHoliday')">Roman Holiday (1953)</a></li>
+                <li class="list-group-item" id="10"><a href="#" onclick="showMovieDetails('beforeSunrise')">Before Sunrise (1995)</a></li>
+            </ol>
+
+            <div id="movieDetails" class="hidden mt-4">
+                <button class="btn btn-danger mb-3" onclick="goBack()">Back to List</button>
+                <h2 id="movieTitle" class="text-white"></h2>
+                <p id="movieDescription" class="text-white"></p>
+                <a id="ottLink" href="#" class="btn btn-primary mb-3" target="_blank">Watch on OTT Platform</a>
+                <div class="trailer">
+                    <h3 class="text-white">Movie Trailer</h3>
+                    <div class="iframe-container">
+                        <iframe id="movieTrailer" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="cast">
+                    <h3 class="text-white">Cast</h3>
+                    <div class="row" id="castList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/JS/romance.js"></script>
+</body>
+</html>

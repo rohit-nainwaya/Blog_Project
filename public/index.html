@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies_Zilla</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="/CSS/index.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Movies_Zilla</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon custom-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/action">Action</a></li>
+                  <li><a class="dropdown-item" href="/comedy">Comedy</a></li>
+                  <li><a class="dropdown-item" href="/drama">Drama</a></li>
+                  <li><a class="dropdown-item" href="/fantasy">Fantasy</a></li>
+                  <li><a class="dropdown-item" href="/horror">Horror</a></li>
+                  <li><a class="dropdown-item" href="/mystery">Mystery</a></li>
+                  <li><a class="dropdown-item" href="/romance">Romance</a></li>
+                  <li><a class="dropdown-item" href="/adult">18+</a></li>
+                  <li><a class="dropdown-item" href="/sci-fi">Science Fiction</a></li>
+                  <li><a class="dropdown-item" href="/thriller">Thriller</a></li>
+                  <li><a class="dropdown-item" href="/documentary">Documentary</a></li>
+                  <li><a class="dropdown-item" href="/animation">Animation</a></li>
+                  <li><a class="dropdown-item" href="/musical">Musical</a></li>
+                  <li><a class="dropdown-item" href="/western">Western</a></li>
+                  <li><a class="dropdown-item" href="/biographical">Biographical</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+    <header class="text-center my-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to Movies_Zilla</h1>
+            <p class="lead">Welcome to our movie hub, where we bring you the freshest and most exciting films across a wide array of genres. Whether you're a fan of heart-pounding action, side-splitting comedies, or thought-provoking dramas, we've got something for everyone. Dive into our curated selections and stay up-to-date with the latest releases in each category.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" type="button">
+                        <a href="/action">
+                            <img src="assets/action.jpg" class="d-block w-100" alt="Action">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Action</h5>
+                                <p>Experience the latest heart-pounding action films.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/comedy">
+                            <img src="assets/comedy.jpg" class="d-block w-100" alt="Comedy">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Comedy</h5>
+                                <p>Laugh out loud with the latest comedies.</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="/drama">
+                            <img src="assets/drama.jpg" class="d-block w-100" alt="Drama">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Drama</h5>
+                                <p>Dive deep into thought-provoking dramas.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="row g-4 mt-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white">
+                        <img src="assets/action.jpg" class="card-img" alt="Action">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <h5 class="card-title"><a href="/action" class="stretched-link text-white">Action</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white">
+                        <img src="assets/comedy.jpg" class="card-img" alt="Comedy">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <h5 class="card-title"><a href="/comedy" class="stretched-link text-white">Comedy</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white">
+                        <img src="assets/drama.jpg" class="card-img" alt="Drama">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <h5 class="card-title"><a href="/drama" class="stretched-link text-white">Drama</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white">
+                        <img src="assets/fantasy.jpg" class="card-img" alt="Fantasy">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <h5 class="card-title"><a href="/fantasy" class="stretched-link text-white">Fantasy</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card bg-dark text-white">
+                        <img src="assets/horror.jpg" class="card-img" alt="Horror">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <h5 class="card-title"><a href="/horror" class="stretched-link text-white">Horror</a></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="desc text-center my-5">
+        <div class="container">
+            <h2 class="mb-4">Stay informed with our timely and comprehensive coverage on everything from action-packed blockbusters to heartwarming dramas and side-splitting comedies.</h2>
+            <p>Discover what's new, stay ahead of the trends, and never miss a beat with us!</p>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <div class="container">
+          <h4>Join Us:</h4>
+          <ul class="social list-inline">
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
