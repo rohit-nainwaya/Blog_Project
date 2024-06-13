@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #000;
 }
 
 .container-fluid {
@@ -10,7 +11,7 @@ body {
 }
 
 .navbar-brand {
-    font-size: 2.2rem; /* Increased font size */
+    font-size: 4vw; /* Increased font size */
     margin: 2rem 2rem;
 }
 
@@ -117,32 +118,32 @@ body {
 
 #home {
     position: absolute;
-    top: 1.1em;
-    left: 1.3em;
-    font-size: 2.5rem;
+    top: 0.7em;
+    left: 1.2em;
+    font-size: 4vw;
     display: block; /* Ensure the home icon is always visible */
 }
 
 @media (max-width: 576px) {
-    .navbar-brand {
-        font-size: 1.5rem; /* Decrease font size for smaller screens */
-    }
+    /* .navbar-brand {
+        font-size: 4vw;  Decrease font size for smaller screens 
+    } */
 
     .card {
         width: 40% /* Make cards full width on smaller screens */
     }
 
-    #home {
+    /* #home {
         font-size: 1.5rem;
-        top: 5px; /* Adjust top position for smaller screens */
-        left: 5px; /* Adjust left position for smaller screens */
-    }
+        top: 5px; /* Adjust top position for smaller screens 
+        left: 5px; /* Adjust left position for smaller screens 
+    } */
 }
 
 @media (max-width: 768px) {
-    .navbar-brand {
-        font-size: 2rem; /* Decrease font size for medium screens */
-    }
+    /* .navbar-brand {
+        font-size: 7vw;  Decrease font size for medium screens 
+    } */
 
     .home-icon {
         display: block; /* Show the home icon on smaller screens */
@@ -153,8 +154,20 @@ body {
 
     /* Style the hamburger icon */
     .home-icon a {
-        font-size: 24px;
+        font-size: 4vw;
         color: #fff;
         text-decoration: none;
+    }
+}
+
+@media (max-width: 700px){
+    .navbar-brand {
+        font-size: 7vw; /* Decrease font size for medium screens */
+    }
+
+    #home {
+        font-size: 7vw;
+        top: 5px; /* Adjust top position for smaller screens */
+        left: 5px; /* Adjust left position for smaller screens */
     }
 }
