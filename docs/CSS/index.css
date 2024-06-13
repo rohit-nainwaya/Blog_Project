@@ -175,3 +175,11 @@ footer .social a:hover {
     height: 60em;
     overflow: scroll;
 }
+
+.blog h1{
+    color: #FF5F00;
+}
+
+.blog h2{
+    color: #BF5F00;
+}
