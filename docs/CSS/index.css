@@ -10,6 +10,11 @@ body {
     left: 0px;
     background-color: #1b1818;
     z-index: 3;
+    height: 6rem;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+    display: block;
 }
 
 .navbar-nav .nav-link {

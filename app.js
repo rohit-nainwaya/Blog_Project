@@ -69,6 +69,10 @@ app.get('/biographical', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'biographical.html'));
 });
 
+app.get('/popular', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'popular.html'));
+});
+
 app.listen(port, () =>{
     console.log(`server started at ${port}`);
 });

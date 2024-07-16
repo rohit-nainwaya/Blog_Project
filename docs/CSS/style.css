@@ -86,6 +86,12 @@ body {
     transform: translateY(-5px);
 }
 
+.mvCard:hover{
+    border: 3px solid blue;
+    a{
+        color: red;
+    }
+}
 .card img {
     width: 100%;
     height: auto;
