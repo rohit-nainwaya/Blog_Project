@@ -73,6 +73,22 @@ app.get('/popular', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'popular.html'));
 });
 
+app.get('/about', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'about.html'));
+});
+
+app.get('/contact', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'contact.html'));
+});
+
+app.get('/terms', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'terms.html'));
+});
+
+app.get('/privacy', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'privacy.html'));
+});
+
 app.listen(port, () =>{
     console.log(`server started at ${port}`);
 });
