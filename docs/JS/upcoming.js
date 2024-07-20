@@ -1,12 +1,11 @@
-let url = 'https://api.themoviedb.org/3/movie/popular?api_key=2db5bc75c33eb661cc482365062fa0e5';
+let url = 'https://api.themoviedb.org/3/movie/upcoming?api_key=2db5bc75c33eb661cc482365062fa0e5';
 
-async function getPopular(){
-    try{
+async function getUpcoming() {
+    try {
         let res = await axios.get(url);
         let results = res.data.results;
         return results;
-    }
-    catch(e){
+    } catch (e) {
         let err = `error- ${e}`;
         return err;
     }
@@ -14,7 +13,7 @@ async function getPopular(){
 
 let movie_card = document.querySelector('.movie_card');
 (async () => {
-    let results = await getPopular();
+    let results = await getUpcoming();
     
     if (typeof results === 'string') {
         console.log(results); // Log the error
@@ -63,7 +62,7 @@ async function showMovieDetails(movieId) {
             let castCard = document.createElement('div');
             castCard.className = 'col-md-2';
             castCard.innerHTML = `
-                <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" class="img-fluid card row" id="castList" alt="${actor.name}">
+                <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" class="img-fluid" alt="${actor.name}">
                 <p class="text-white">${actor.name}</p>
                 <p class="text-muted">${actor.character}</p>
             `;
