@@ -82,7 +82,24 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
+.cast-card {
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
 .card:hover {
+    transform: translateY(-5px);
+}
+
+.cast-card:hover {
     transform: translateY(-5px);
 }
 

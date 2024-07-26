@@ -1,8 +1,8 @@
 let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
-let baseUrl = 'https://api.themoviedb.org/3/movie/popular';
+let baseUrl = 'https://api.themoviedb.org/3/trending/movie/week';
 
-// Fetch a single page of popular movies
-async function getPopular(page = 1) {
+// Fetch a single page of trending movies
+async function getTrending(page = 1) {
     try {
         let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
         let results = res.data.results;
@@ -13,9 +13,9 @@ async function getPopular(page = 1) {
     }
 }
 
-// Fetch and display a page of popular movies
-async function fetchPopularMovies(page = 1) {
-    let results = await getPopular(page);
+// Fetch and display a page of trending movies
+async function fetchTrendingMovies(page = 1) {
+    let results = await getTrending(page);
     
     if (typeof results === 'string') {
         console.log(results); // Log the error
@@ -91,9 +91,9 @@ let currentPage = 1;
 window.addEventListener('scroll', () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         currentPage++;
-        fetchPopularMovies(currentPage);
+        fetchTrendingMovies(currentPage);
     }
 });
 
 // Initial load
-fetchPopularMovies();
+fetchTrendingMovies();

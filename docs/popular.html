@@ -28,10 +28,11 @@
     <meta name="twitter:description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
     <meta name="twitter:image" content="https://moviezilla.in/path-to-your-image.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popular movies | Movie Zilla</title>
+    <title>Popular Movies | Movie Zilla</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.0/lazysizes.min.js" async></script>
 </head>
 <body>
     <div class="container-fluid px-0">
@@ -42,10 +43,7 @@
             <a class="navbar-brand mx-auto" href="#">Popular Movies</a>
         </nav>
         <div class="container mt-4">
-            <div class="movie_card">
-
-            </div>
-
+            <div class="movie_card"></div>
             <div id="movieDetails" class="hidden mt-4">
                 <button class="btn btn-danger mb-3" onclick="goBack()">Back to List</button>
                 <h2 id="movieTitle" class="text-white"></h2>
@@ -64,7 +62,6 @@
             </div>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
