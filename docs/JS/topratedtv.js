@@ -33,38 +33,39 @@ const countryCodes = {
 
 function getCountryName(code) {
     return countryCodes[code] || code;
-};
+}
 
-// Fetch a single page of top rated TV shows
+// Fetch a single page of top-rated TV shows
 async function getTopRatedTVShows(page = 1) {
     try {
         let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
-        let results = res.data.results;
-        return results;
+        return res.data.results;
     } catch (e) {
-        console.error(`Error fetching top rated TV shows: ${e}`);
+        console.error(`Error fetching top-rated TV shows: ${e}`);
         return [];
     }
 }
 
-// Fetch and display a page of top rated TV shows
+// Fetch and display a page of top-rated TV shows
 async function fetchTopRatedTVShows(page = 1) {
     let results = await getTopRatedTVShows(page);
-    
+
     if (results.length === 0) {
         console.log('No results found.');
         return;
     }
 
     results.sort((a, b) => b.vote_average - a.vote_average); // Sort by rating
-    
+
     let tvshow_card = document.querySelector('.tvshow_card');
     results.forEach(tvshow => {
         const tvCard = document.createElement('div');
         tvCard.className = 'tvCard card mb-3';
+
+        const posterPath = tvshow.poster_path ? `https://image.tmdb.org/t/p/w500${tvshow.poster_path}` : './assets/alt.jpg'; // Fallback image
         tvCard.innerHTML = `
             <a href="#" class="tvshow-link" data-id="${tvshow.id}">
-                <img data-src="https://image.tmdb.org/t/p/w500${tvshow.poster_path}" class="card-img-top lazyload" alt="${tvshow.name}">
+                <img data-src="${posterPath}" class="card-img-top lazyload" alt="${tvshow.name}">
                 <div class="card-body">
                     <h5 class="card-title">${tvshow.name}</h5>
                     <p class="card-text">Rating: ${tvshow.vote_average}</p>
@@ -93,7 +94,7 @@ async function getWatchProviders(tvshowId) {
         console.error(`Error fetching watch providers: ${e}`);
         return {};
     }
-};
+}
 
 // Show TV show details
 async function showTVShowDetails(tvshowId) {
@@ -101,7 +102,7 @@ async function showTVShowDetails(tvshowId) {
     try {
         let res = await axios.get(url2);
         let tvshow = res.data;
-        
+
         document.getElementById('tvshowTitle').innerText = tvshow.name;
         document.getElementById('tvshowDescription').innerText = tvshow.overview;
         document.getElementById('ottLink').href = `https://www.themoviedb.org/tv/${tvshow.id}`;
@@ -113,8 +114,10 @@ async function showTVShowDetails(tvshowId) {
         tvshow.credits.cast.slice(0, 5).forEach(actor => {
             let castCard = document.createElement('div');
             castCard.className = 'cast-card';
+            
+            const actorProfilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : './assets/alt.jpg'; // Fallback image for actor
             castCard.innerHTML = `
-                <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" class="img-fluid" alt="${actor.name}">
+                <img src="${actorProfilePath}" class="img-fluid" alt="${actor.name}">
                 <p class="text-white">${actor.name}</p>
                 <p class="text-muted">${actor.character}</p>
             `;
