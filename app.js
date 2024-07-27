@@ -69,8 +69,36 @@ app.get('/biographical', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'biographical.html'));
 });
 
-app.get('/popular', (req, res) =>{
+app.get('/Popular_Movies', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'popular.html'));
+});
+
+app.get('/Upcoming_Movies', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'upcoming.html'));
+});
+
+app.get('/Trending_Movies', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'trending.html'));
+});
+
+app.get('/Top_Rated_Movies', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'toprated.html'));
+});
+
+app.get('/Popular_Tv_Shows', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'populartv.html'));
+});
+
+app.get('/On_Tv_Shows', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'ontv.html'));
+});
+
+app.get('/Airing_Shows_Today', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'airing-today.html'));
+});
+
+app.get('/Top_Rated_Shows', (req, res) =>{
+    res.sendFile(path.join(__dirname, 'docs', 'topratedtv.html'));
 });
 
 app.get('/about', (req, res) =>{

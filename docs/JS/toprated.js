@@ -36,66 +36,59 @@ function getCountryName(code) {
 }
 
 // Fetch a single page of top-rated movies
-async function getTopRated(page = 1) {
+async function getTopRatedMovies(page = 1) {
     try {
         let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
         return res.data.results;
     } catch (e) {
-        console.log(`Error: ${e}`);
+        console.error(`Error fetching top-rated movies: ${e}`);
         return [];
     }
 }
 
-// Fetch detailed information about a movie
+// Fetch movie details to get production countries
 async function getMovieDetails(movieId) {
     try {
         let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
         return res.data;
     } catch (e) {
-        console.log(`Error: ${e}`);
-        return null;
-    }
-}
-
-// Fetch watch providers information for a movie
-async function getWatchProviders(movieId) {
-    try {
-        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`);
-        return res.data.results;
-    } catch (e) {
-        console.log(`Error: ${e}`);
+        console.error(`Error fetching movie details: ${e}`);
         return null;
     }
 }
 
 // Fetch and display a page of top-rated movies
 async function fetchTopRatedMovies(page = 1) {
-    let results = await getTopRated(page);
+    let results = await getTopRatedMovies(page);
+
+    if (results.length === 0) {
+        console.log('No results found.');
+        return;
+    }
+
+    results.sort((a, b) => b.vote_average - a.vote_average); // Sort by rating
+
     let movie_card = document.querySelector('.movie_card');
-    
-    let movieDetailsPromises = results.map(movie => getMovieDetails(movie.id));
-    let moviesDetails = await Promise.all(movieDetailsPromises);
-    
-    moviesDetails.forEach((movieDetails, index) => {
-        if (movieDetails) {
-            let countries = movieDetails.production_countries.map(country => getCountryName(country.iso_3166_1)).join(', ');
-            const movie = results[index];
-            
-            const mvCard = document.createElement('div');
-            mvCard.className = 'mvCard card mb-3';
-            mvCard.innerHTML = `
-                <a href="#" class="movie-link" data-id="${movie.id}">
-                    <img data-src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top lazyload" alt="${movie.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${movie.title}</h5>
-                        <p class="card-text">Rating: ${movie.vote_average}</p>
-                        <p class="card-text">Country: ${countries}</p>
-                    </div>
-                </a>
-            `;
-            movie_card.appendChild(mvCard);
-        }
-    });
+    for (let movie of results) {
+        const movieCard = document.createElement('div');
+        movieCard.className = 'mvCard card mb-3';
+
+        const posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : './assets/alt.jpg'; // Fallback image
+        const movieDetails = await getMovieDetails(movie.id);
+        const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : 'Unknown';
+
+        movieCard.innerHTML = `
+            <a href="#" class="movie-link" data-id="${movie.id}">
+                <img data-src="${posterPath}" class="card-img-top lazyload" alt="${movie.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${movie.title}</h5>
+                    <p class="card-text">Rating: ${movie.vote_average}</p>
+                    <p class="card-text">Country: ${countries}</p>
+                </div>
+            </a>
+        `;
+        movie_card.appendChild(movieCard);
+    }
 
     document.querySelectorAll('.movie-link').forEach(link => {
         link.addEventListener('click', async (event) => {
@@ -106,13 +99,24 @@ async function fetchTopRatedMovies(page = 1) {
     });
 }
 
+// Fetch watch providers for a movie
+async function getWatchProviders(movieId) {
+    try {
+        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`);
+        return res.data.results;
+    } catch (e) {
+        console.error(`Error fetching watch providers: ${e}`);
+        return {};
+    }
+}
+
 // Show movie details
 async function showMovieDetails(movieId) {
     let url2 = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos,credits`;
     try {
         let res = await axios.get(url2);
         let movie = res.data;
-        
+
         document.getElementById('movieTitle').innerText = movie.title;
         document.getElementById('movieDescription').innerText = movie.overview;
         document.getElementById('ottLink').href = `https://www.themoviedb.org/movie/${movie.id}`;
@@ -124,8 +128,10 @@ async function showMovieDetails(movieId) {
         movie.credits.cast.slice(0, 5).forEach(actor => {
             let castCard = document.createElement('div');
             castCard.className = 'cast-card';
+            
+            const actorProfilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : './assets/alt.jpg'; // Fallback image for actor
             castCard.innerHTML = `
-                <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" class="img-fluid" alt="${actor.name}">
+                <img src="${actorProfilePath}" class="img-fluid" alt="${actor.name}">
                 <p class="text-white">${actor.name}</p>
                 <p class="text-muted">${actor.character}</p>
             `;
@@ -154,7 +160,7 @@ async function showMovieDetails(movieId) {
         document.querySelector('.movie_card').classList.add('hidden');
         document.getElementById('movieDetails').classList.remove('hidden');
     } catch (e) {
-        console.log(`Error: ${e}`);
+        console.error(`Error showing movie details: ${e}`);
     }
 }
 
@@ -166,13 +172,10 @@ function goBack() {
 
 // Infinite Scroll
 let currentPage = 1;
-let isLoading = false;
-window.addEventListener('scroll', async () => {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight && !isLoading) {
-        isLoading = true;
+window.addEventListener('scroll', () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         currentPage++;
-        await fetchTopRatedMovies(currentPage);
-        isLoading = false;
+        fetchTopRatedMovies(currentPage);
     }
 });
 

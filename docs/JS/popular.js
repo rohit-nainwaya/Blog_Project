@@ -1,48 +1,112 @@
 let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
 let baseUrl = 'https://api.themoviedb.org/3/movie/popular';
 
+// Function to map country codes to full country names
+const countryCodes = {
+    "US": "United States",
+    "GB": "United Kingdom",
+    "CA": "Canada",
+    "IN": "India",
+    "CN": "China",
+    "KR": "South Korea",
+    "ZA": "South Africa",
+    "NL": "Netherlands",
+    "JP": "Japan",
+    "DE": "Germany",
+    "ES": "Spain",
+    "PT": "Portugal",
+    "AU": "Australia",
+    "PE": "Peru",
+    "CO": "Colombia",
+    "CL": "Chile",
+    "HK": "Hong Kong",
+    "FI": "Finland",
+    "AR": "Argentina",
+    "FR": "France",
+    "IT": "Italy",
+    "MX": "Mexico",
+    "PL": "Poland",
+    "BR": "Brazil",
+    "TR": "Turkey",
+    "PH": "Philippines"
+};
+
+function getCountryName(code) {
+    return countryCodes[code] || code;
+}
+
 // Fetch a single page of popular movies
-async function getPopular(page = 1) {
+async function getPopularMovies(page = 1) {
     try {
         let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
-        let results = res.data.results;
-        return results;
+        return res.data.results;
     } catch (e) {
-        let err = `error- ${e}`;
-        return err;
+        console.error(`Error fetching popular movies: ${e}`);
+        return [];
+    }
+}
+
+// Fetch movie details to get production countries
+async function getMovieDetails(movieId) {
+    try {
+        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
+        return res.data;
+    } catch (e) {
+        console.error(`Error fetching movie details: ${e}`);
+        return null;
     }
 }
 
 // Fetch and display a page of popular movies
 async function fetchPopularMovies(page = 1) {
-    let results = await getPopular(page);
-    
-    if (typeof results === 'string') {
-        console.log(results); // Log the error
-    } else {
-        let movie_card = document.querySelector('.movie_card');
-        results.forEach(movie => {
-            const mvCard = document.createElement('div');
-            mvCard.className = 'mvCard card mb-3';
-            mvCard.innerHTML = `
-                <a href="#" class="movie-link" data-id="${movie.id}">
-                    <img data-src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top lazyload" alt="${movie.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${movie.title}</h5>
-                        <p class="card-text">Popularity: ${movie.popularity}</p>
-                    </div>
-                </a>
-            `;
-            movie_card.appendChild(mvCard);
-        });
+    let results = await getPopularMovies(page);
 
-        document.querySelectorAll('.movie-link').forEach(link => {
-            link.addEventListener('click', async (event) => {
-                event.preventDefault();
-                let movieId = event.currentTarget.getAttribute('data-id');
-                await showMovieDetails(movieId);
-            });
+    if (results.length === 0) {
+        console.log('No results found.');
+        return;
+    }
+
+    results.sort((a, b) => b.popularity - a.popularity); // Sort by popularity
+
+    let movie_card = document.querySelector('.movie_card');
+    for (let movie of results) {
+        const movieCard = document.createElement('div');
+        movieCard.className = 'mvCard card mb-3';
+
+        const posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : './assets/alt.jpg'; // Fallback image
+        const movieDetails = await getMovieDetails(movie.id);
+        const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : 'Unknown';
+
+        movieCard.innerHTML = `
+            <a href="#" class="movie-link" data-id="${movie.id}">
+                <img data-src="${posterPath}" class="card-img-top lazyload" alt="${movie.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${movie.title}</h5>
+                    <p class="card-text">Popularity: ${movie.popularity}</p>
+                    <p class="card-text">Country: ${countries}</p>
+                </div>
+            </a>
+        `;
+        movie_card.appendChild(movieCard);
+    }
+
+    document.querySelectorAll('.movie-link').forEach(link => {
+        link.addEventListener('click', async (event) => {
+            event.preventDefault();
+            let movieId = event.currentTarget.getAttribute('data-id');
+            await showMovieDetails(movieId);
         });
+    });
+}
+
+// Fetch watch providers for a movie
+async function getWatchProviders(movieId) {
+    try {
+        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`);
+        return res.data.results;
+    } catch (e) {
+        console.error(`Error fetching watch providers: ${e}`);
+        return {};
     }
 }
 
@@ -52,7 +116,7 @@ async function showMovieDetails(movieId) {
     try {
         let res = await axios.get(url2);
         let movie = res.data;
-        
+
         document.getElementById('movieTitle').innerText = movie.title;
         document.getElementById('movieDescription').innerText = movie.overview;
         document.getElementById('ottLink').href = `https://www.themoviedb.org/movie/${movie.id}`;
@@ -64,19 +128,39 @@ async function showMovieDetails(movieId) {
         movie.credits.cast.slice(0, 5).forEach(actor => {
             let castCard = document.createElement('div');
             castCard.className = 'cast-card';
+            
+            const actorProfilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : './assets/alt.jpg'; // Fallback image for actor
             castCard.innerHTML = `
-                <img src="https://image.tmdb.org/t/p/w200${actor.profile_path}" class="img-fluid" alt="${actor.name}">
+                <img src="${actorProfilePath}" class="img-fluid" alt="${actor.name}">
                 <p class="text-white">${actor.name}</p>
                 <p class="text-muted">${actor.character}</p>
             `;
             castList.appendChild(castCard);
         });
 
+        // Display watch providers
+        let watchProviders = await getWatchProviders(movieId);
+        let watchProvidersList = document.getElementById('watchProvidersList');
+        watchProvidersList.innerHTML = '';
+        if (watchProviders && watchProviders.IN && watchProviders.IN.flatrate) {
+            let providers = watchProviders.IN.flatrate;
+            if (providers.length > 0) {
+                providers.forEach(provider => {
+                    let listItem = document.createElement('li');
+                    listItem.innerText = provider.provider_name;
+                    watchProvidersList.appendChild(listItem);
+                });
+            } else {
+                watchProvidersList.innerHTML = '<li>No providers available</li>';
+            }
+        } else {
+            watchProvidersList.innerHTML = '<li>No providers information available</li>';
+        }
+
         document.querySelector('.movie_card').classList.add('hidden');
         document.getElementById('movieDetails').classList.remove('hidden');
     } catch (e) {
-        let err = `error- ${e}`;
-        console.log(err);
+        console.error(`Error showing movie details: ${e}`);
     }
 }
 
