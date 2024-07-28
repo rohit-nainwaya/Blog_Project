@@ -9,63 +9,59 @@ app.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'index.html'));
 });
 
-app.get('/action', (req, res) =>{
+app.get('/Top_Actions', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'action.html'));
 });
 
-app.get('/comedy', (req, res) =>{
+app.get('/Top_Comedy', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'comedy.html'));
 });
 
-app.get('/drama', (req, res) =>{
+app.get('/Top_Drama', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'drama.html'));
 });
 
-app.get('/fantasy', (req, res) =>{
+app.get('/Top_Fantasy', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'fantasy.html'));
 });
 
-app.get('/horror', (req, res) =>{
+app.get('/Top_Horror', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'horror.html'));
 });
 
-app.get('/mystery', (req, res) =>{
+app.get('/Top_Mystery', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'mystery.html'));
 });
 
-app.get('/romance', (req, res) =>{
+app.get('/Top_Romance', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'romance.html'));
 });
 
-app.get('/adult', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'docs', 'adult.html'));
-});
-
-app.get('/sci-fi', (req, res) =>{
+app.get('/Top_sci-fi', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'sci-fi.html'));
 });
 
-app.get('/thriller', (req, res) =>{
+app.get('/Top_Thriller', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'thriller.html'));
 });
 
-app.get('/documentary', (req, res) =>{
+app.get('/Top_Documentary', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'documentary.html'));
 });
 
-app.get('/animation', (req, res) =>{
+app.get('/Top_Animation', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'animation.html'));
 });
 
-app.get('/musical', (req, res) =>{
+app.get('/Top_Musical', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'musical.html'));
 });
 
-app.get('/western', (req, res) =>{
+app.get('/Top_Western', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'western.html'));
 });
 
-app.get('/biographical', (req, res) =>{
+app.get('/Top_Biographical', (req, res) =>{
     res.sendFile(path.join(__dirname, 'docs', 'biographical.html'));
 });
 
