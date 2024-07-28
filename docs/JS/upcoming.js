@@ -33,7 +33,18 @@ const countryCodes = {
 
 function getCountryName(code) {
     return countryCodes[code] || code;
-};
+}
+
+// Fetch a single page of upcoming movies
+async function getUpcomingMovies(page = 1) {
+    try {
+        let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
+        return res.data.results;
+    } catch (e) {
+        console.error(`Error fetching popular movies: ${e}`);
+        return [];
+    }
+}
 
 // Fetch movie details to get production countries
 async function getMovieDetails(movieId) {
@@ -44,47 +55,86 @@ async function getMovieDetails(movieId) {
         console.error(`Error fetching movie details: ${e}`);
         return null;
     }
-};
-
-let displayedMovieIds = new Set(); // Track displayed movie IDs to avoid duplicates
-
-// Fetch a single page of upcoming movies
-async function getUpcoming(page = 1) {
-    try {
-        let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
-        let results = res.data.results;
-        return results;
-    } catch (e) {
-        let err = `error- ${e}`;
-        return err;
-    }
 }
 
-// Fetch all upcoming movies
-async function fetchAllUpcomingMovies() {
-    let allMovies = [];
-    let page = 1;
-    let totalPages = 1;
+// Fetch and display a page of upcoming movies with sorting logic from 'a'
+async function fetchAndDisplayMovies(page = 1) {
+    let results = await getUpcomingMovies(page);
 
-    while (page <= totalPages) {
-        let results = await getUpcoming(page);
-        if (typeof results === 'string') {
-            console.log(results); // Log the error
-            break;
-        }
-        
-        allMovies = allMovies.concat(results);
-
-        // Check if there are more pages
-        if (page === 1) {
-            let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
-            totalPages = res.data.total_pages;
-        }
-
-        page++;
+    if (results.length === 0) {
+        console.log('No results found.');
+        return;
     }
 
-    return allMovies;
+    let currentDate = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+    let upcomingMovies = results.filter(movie => movie.release_date >= currentDate);
+    let remainingMovies = results.filter(movie => movie.release_date < currentDate);
+
+    // Sort upcoming movies by release date
+    upcomingMovies.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
+    remainingMovies.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
+
+    let movie_card = document.querySelector('.movie_card');
+    for (let movie of upcomingMovies) {
+        const movieCard = document.createElement('div');
+        movieCard.className = 'mvCard card mb-3';
+
+        const posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : './assets/alt.jpg'; // Fallback image
+        const movieDetails = await getMovieDetails(movie.id);
+        const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : 'Unknown';
+
+        movieCard.innerHTML = `
+            <a href="#" class="movie-link" data-id="${movie.id}">
+                <img data-src="${posterPath}" class="card-img-top lazyload" alt="${movie.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${movie.title}</h5>
+                    <p class="card-text">Release Date: ${movie.release_date}</p>
+                    <p class="card-text">Country: ${countries}</p>
+                </div>
+            </a>
+        `;
+        movie_card.appendChild(movieCard);
+    }
+
+    for (let movie of remainingMovies) {
+        const movieCard = document.createElement('div');
+        movieCard.className = 'mvCard card mb-3';
+
+        const posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : './assets/alt.jpg'; // Fallback image
+        const movieDetails = await getMovieDetails(movie.id);
+        const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : 'Unknown';
+
+        movieCard.innerHTML = `
+            <a href="#" class="movie-link" data-id="${movie.id}">
+                <img data-src="${posterPath}" class="card-img-top lazyload" alt="${movie.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${movie.title}</h5>
+                    <p class="card-text">Release Date: ${movie.release_date}</p>
+                    <p class="card-text">Country: ${countries}</p>
+                </div>
+            </a>
+        `;
+        movie_card.appendChild(movieCard);
+    }
+
+    document.querySelectorAll('.movie-link').forEach(link => {
+        link.addEventListener('click', async (event) => {
+            event.preventDefault();
+            let movieId = event.currentTarget.getAttribute('data-id');
+            await showMovieDetails(movieId);
+        });
+    });
+}
+
+// Fetch watch providers for a movie
+async function getWatchProviders(movieId) {
+    try {
+        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`);
+        return res.data.results;
+    } catch (e) {
+        console.error(`Error fetching watch providers: ${e}`);
+        return {};
+    }
 }
 
 // Show movie details
@@ -93,7 +143,7 @@ async function showMovieDetails(movieId) {
     try {
         let res = await axios.get(url2);
         let movie = res.data;
-        
+
         document.getElementById('movieTitle').innerText = movie.title;
         document.getElementById('movieDescription').innerText = movie.overview;
         document.getElementById('ottLink').href = `https://www.themoviedb.org/movie/${movie.id}`;
@@ -105,93 +155,39 @@ async function showMovieDetails(movieId) {
         movie.credits.cast.slice(0, 5).forEach(actor => {
             let castCard = document.createElement('div');
             castCard.className = 'cast-card';
-            const profilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : './assets/alt.jpg'; // Fallback image
+            
+            const actorProfilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : './assets/alt.jpg'; // Fallback image for actor
             castCard.innerHTML = `
-                <img src="${profilePath}" class="img-fluid" alt="${actor.name}">
+                <img src="${actorProfilePath}" class="img-fluid" alt="${actor.name}">
                 <p class="text-white">${actor.name}</p>
                 <p class="text-muted">${actor.character}</p>
             `;
             castList.appendChild(castCard);
         });
 
+        // Display watch providers
+        let watchProviders = await getWatchProviders(movieId);
+        let watchProvidersList = document.getElementById('watchProvidersList');
+        watchProvidersList.innerHTML = '';
+        if (watchProviders && watchProviders.IN && watchProviders.IN.flatrate) {
+            let providers = watchProviders.IN.flatrate;
+            if (providers.length > 0) {
+                providers.forEach(provider => {
+                    let listItem = document.createElement('li');
+                    listItem.innerText = provider.provider_name;
+                    watchProvidersList.appendChild(listItem);
+                });
+            } else {
+                watchProvidersList.innerHTML = '<li>No providers available</li>';
+            }
+        } else {
+            watchProvidersList.innerHTML = '<li>No providers information available</li>';
+        }
+
         document.querySelector('.movie_card').classList.add('hidden');
         document.getElementById('movieDetails').classList.remove('hidden');
     } catch (e) {
-        let err = `error- ${e}`;
-        console.log(err);
-    }
-}
-
-// Sort and display movies
-async function sortAndDisplayMovies() {
-    let results = await fetchAllUpcomingMovies();
-    
-    if (typeof results === 'string') {
-        console.log(results); // Log the error
-    } else {
-        let currentDate = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-        let upcomingMovies = results.filter(movie => movie.release_date >= currentDate);
-        let remainingMovies = results.filter(movie => movie.release_date < currentDate);
-
-        // Sort upcoming movies by release date
-        upcomingMovies.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
-        remainingMovies.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
-
-        let movie_card = document.querySelector('.movie_card');
-        movie_card.innerHTML = ''; // Clear previous results if any
-
-        // Display upcoming movies
-        for(let movie of upcomingMovies){
-            const movieDetails = await getMovieDetails(movie.id);
-            const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : "Unknown";
-            if (!displayedMovieIds.has(movie.id)) {
-                displayedMovieIds.add(movie.id);
-                const mvCard = document.createElement('div');
-                mvCard.className = 'mvCard card mb-3';
-                const posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : './assets/alt.jpg'; // Fallback image
-                mvCard.innerHTML = `
-                    <a href="#" class="movie-link" data-id="${movie.id}">
-                        <img data-src="${posterPath}" class="card-img-top lazyload" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">Release Date: ${movie.release_date}</p>
-                            <p class="card-text">Country: ${countries}</p>
-                        </div>
-                    </a>
-                `;
-                movie_card.appendChild(mvCard);
-            }
-        };
-
-        // Display remaining movies
-        for(movie of remainingMovies){
-            const movieDetails = await getMovieDetails(movie.id);
-            const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : "Unknown";
-            if (!displayedMovieIds.has(movie.id)) {
-                displayedMovieIds.add(movie.id);
-                const mvCard = document.createElement('div');
-                mvCard.className = 'mvCard card mb-3';
-                mvCard.innerHTML = `
-                    <a href="#" class="movie-link" data-id="${movie.id}">
-                        <img data-src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top lazyload" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">Release Date: ${movie.release_date}</p>
-                            <p class="card-text">Country: ${countries}</p>
-                        </div>
-                    </a>
-                `;
-                movie_card.appendChild(mvCard);
-            }
-        };
-
-        document.querySelectorAll('.movie-link').forEach(link => {
-            link.addEventListener('click', async (event) => {
-                event.preventDefault();
-                let movieId = event.currentTarget.getAttribute('data-id');
-                await showMovieDetails(movieId);
-            });
-        });
+        console.error(`Error showing movie details: ${e}`);
     }
 }
 
@@ -203,76 +199,12 @@ function goBack() {
 
 // Infinite Scroll
 let currentPage = 1;
-async function fetchUpcomingMovies(page) {
-    let results = await getUpcoming(page);
-
-    if (typeof results === 'string') {
-        console.log(results); // Log the error
-    } else {
-        let currentDate = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-        let upcomingMovies = results.filter(movie => movie.release_date >= currentDate);
-        let remainingMovies = results.filter(movie => movie.release_date < currentDate);
-
-        // Sort upcoming movies by release date
-        upcomingMovies.sort((a, b) => new Date(a.release_date) - new Date(b.release_date));
-        remainingMovies.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
-
-        let movie_card = document.querySelector('.movie_card');
-
-        // Display upcoming movies
-        upcomingMovies.forEach(movie => {
-            if (!displayedMovieIds.has(movie.id)) {
-                displayedMovieIds.add(movie.id);
-                const mvCard = document.createElement('div');
-                mvCard.className = 'mvCard card mb-3';
-                mvCard.innerHTML = `
-                    <a href="#" class="movie-link" data-id="${movie.id}">
-                        <img data-src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top lazyload" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">Release Date: ${movie.release_date}</p>
-                        </div>
-                    </a>
-                `;
-                movie_card.appendChild(mvCard);
-            }
-        });
-
-        // Display remaining movies
-        remainingMovies.forEach(movie => {
-            if (!displayedMovieIds.has(movie.id)) {
-                displayedMovieIds.add(movie.id);
-                const mvCard = document.createElement('div');
-                mvCard.className = 'mvCard card mb-3';
-                mvCard.innerHTML = `
-                    <a href="#" class="movie-link" data-id="${movie.id}">
-                        <img data-src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top lazyload" alt="${movie.title}">
-                        <div class="card-body">
-                            <h5 class="card-title">${movie.title}</h5>
-                            <p class="card-text">Release Date: ${movie.release_date}</p>
-                        </div>
-                    </a>
-                `;
-                movie_card.appendChild(mvCard);
-            }
-        });
-
-        document.querySelectorAll('.movie-link').forEach(link => {
-            link.addEventListener('click', async (event) => {
-                event.preventDefault();
-                let movieId = event.currentTarget.getAttribute('data-id');
-                await showMovieDetails(movieId);
-            });
-        });
-    }
-}
-
 window.addEventListener('scroll', () => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         currentPage++;
-        fetchUpcomingMovies(currentPage);
+        fetchAndDisplayMovies(currentPage);
     }
 });
 
 // Initial load
-sortAndDisplayMovies();
+fetchAndDisplayMovies();

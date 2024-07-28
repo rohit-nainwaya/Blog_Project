@@ -4,112 +4,125 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
-  <loc>https://moviezilla.in/</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/popular</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Popular_Movies</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/upcoming</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Upcoming_Movies</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/action</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Trending_Movies</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/comedy</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Rated_Movies</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/drama</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Popular_Tv_Shows</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/fantasy</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/On_Tv_Shows</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/horror</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Airing_Shows_Today</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/mystery</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Rated_Shows</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/romance</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Actions</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/sci-fi</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Comedy</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/thriller</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Drama</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/documentary</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Fantasy</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/animation</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Horror</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/musical</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Mystery</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/western</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Romance</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/biographical</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_sci-fi</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/about</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Thriller</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/contact</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Documentary</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/terms</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/Top_Animation</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://moviezilla.in/privacy</loc>
-  <lastmod>2024-07-23T06:33:22+00:00</lastmod>
+  <loc>https://www.moviezilla.in/about</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.moviezilla.in/contact</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.moviezilla.in/terms</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.moviezilla.in/privacy</loc>
+  <lastmod>2018-10-20T01:46:40+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
