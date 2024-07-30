@@ -1,0 +1,305 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+
+/* body {
+    background-color: #1b1818;
+    color: white;
+    font-family: 'Arial', sans-serif;
+} */
+
+.navbar {
+    position: sticky !important;
+    top: 0px !important;
+    left: 0px !important;
+    background-color: #1b1818;
+    z-index: 3;
+    height: 6rem !important;
+}
+
+.navbar .container-fluid{
+    margin-left: 2% !important;
+}
+
+/* .navbar-nav .nav-item:hover .dropdown-menu {
+    display: block !important;
+} */
+
+.navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #17a2b8;
+}
+
+.custom-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.container-fluid {
+    background-color: #000;
+    border: 10px solid #000;
+}
+
+
+.list-group {
+    text-align: center; /* Align list items to center */
+    padding-left: 0; /* Remove default padding */
+}
+
+.list-group-item {
+    background: none;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Add bottom border */
+}
+
+.list-group-item:last-child {
+    border-bottom: none; /* Remove bottom border for last item */
+}
+
+.list-group-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.btn-primary, .btn-danger {
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.cast {
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cast-card {
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    overflow: hidden;
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.cast-card:hover {
+    transform: translateY(-5px);
+}
+
+.mvCard:hover{
+    border: 3px solid blue;
+    a{
+        color: red;
+    }
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+#movieDetails {
+    padding: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add box shadow */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 576px) {
+    /* .navbar-brand {
+        font-size: 4vw;  Decrease font size for smaller screens 
+    } */
+
+    .card {
+        width: 40% /* Make cards full width on smaller screens */
+    }
+
+    /* #home {
+        font-size: 1.5rem;
+        top: 5px; /* Adjust top position for smaller screens 
+        left: 5px; /* Adjust left position for smaller screens 
+    } */
+}
+
+footer {
+    background-color: #232323;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 10%;
+}
+
+footer .social {
+    padding: 0;
+}
+
+footer .social a {
+    color: #ffffff;
+    opacity: 0.8;
+    padding: 0 10px;
+    font-size: 1.5em;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+footer .social a:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.text-green{
+    color: yellowgreen;
+}
+
+.footer-links a:hover {
+    color: #17a2b8;
+}
+
+.footer-links a:not(:last-child)::after {
+    content: "|";
+    margin: 0 10px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .navbar {
+        height: auto;
+    }
+}
+
+/* Ensure the dropdown menus have a proper background color */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.55);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, 
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .dropdown-menu {
+    background-color: #343a40;
+}
+
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:hover, 
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:focus {
+    color: rgba(255,255,255,.75);
+    background-color: rgba(255,255,255,.15);
+}
+
+
+/* Base styles */
+.navbar-collapse {
+    background-color: #343a40; /* Dark background to match navbar-dark */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 5px; /* Optional: for rounded corners */
+}
+
+/* Only apply styles when the navbar is collapsed */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 56px; /* Adjust according to your navbar height */
+        width: 100%;
+        height: calc(100vh - 56px); /* Adjust according to your navbar height */
+        background-color: rgba(52, 58, 64, 0.9); /* Slightly transparent background */
+        z-index: 1; /* Ensure it is above other content */
+        overflow-y: auto; /* Allow scrolling if content overflows */
+    }
+
+    .navbar-toggler {
+        z-index: 2; /* Ensure the toggle button is above the collapsed menu */
+    }
+}

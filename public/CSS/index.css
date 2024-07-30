@@ -1,0 +1,284 @@
+body {
+    background-color: #1b1818;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar {
+    position: sticky !important;
+    top: 0px;
+    left: 0px;
+    background-color: #1b1818;
+    z-index: 3;
+    height: 6rem !important;
+}
+
+.navbar .container-fluid{
+    margin-left: 2% !important;
+}
+
+/* .navbar-nav .nav-item:hover .dropdown-menu {
+    display: block !important;
+} */
+
+.navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #17a2b8;
+}
+
+.custom-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+header {
+    padding: 25px 0;
+    margin-bottom: 40px;
+}
+
+.carousel-item {
+    height: 500px;
+    background-color: #1b1818;
+    color: white;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption h5 {
+    font-size: 2em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption p {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px white;
+}
+
+.card .card-img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card .card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.card-title a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.card-title a:hover {
+    color: #17a2b8;
+}
+
+.desc {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    /* margin: 40px 100px; */
+}
+
+footer {
+    background-color: #232323;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social {
+    padding: 0;
+}
+
+footer .social a {
+    color: #ffffff;
+    opacity: 0.8;
+    padding: 0 10px;
+    font-size: 1.5em;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+footer .social a:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #17a2b8;
+}
+
+.footer-links a:not(:last-child)::after {
+    content: "|";
+    margin: 0 10px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .navbar {
+        height: auto;
+    }
+
+    .carousel-item {
+        height: 400px;
+    }
+
+    .carousel-item img {
+        height: 400px;
+    }
+
+    .card .card-img {
+        height: 250px;
+    }
+
+    header {
+        padding: 40px 0;
+    }
+
+    .desc {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .card .card-img {
+        height: 200px;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .desc {
+        margin: 20px;
+    }
+}
+
+.blog-content{
+    border: 2px solid black;
+    border-radius: 4%;
+    overflow: hidden;
+    margin-top: 3rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.blog{
+    background-color: (255, 255, 255, 0.1);
+    padding: 2rem 2rem;
+    height: 60em;
+    overflow: scroll;
+}
+
+.blog h1{
+    color: #FF5F00;
+}
+
+.blog h2{
+    color: #BF5F00;
+}
+
+/* Ensure the dropdown menus have a proper background color */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.55);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, 
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .dropdown-menu {
+    background-color: #343a40;
+}
+
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:hover, 
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:focus {
+    color: rgba(255,255,255,.75);
+    background-color: rgba(255,255,255,.15);
+}
+
+
+/* Base styles */
+.navbar-collapse {
+    background-color: #343a40; /* Dark background to match navbar-dark */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 5px; /* Optional: for rounded corners */
+}
+
+/* Only apply styles when the navbar is collapsed */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 56px; /* Adjust according to your navbar height */
+        width: 100%;
+        height: calc(100vh - 56px); /* Adjust according to your navbar height */
+        background-color: rgba(52, 58, 64, 0.9); /* Slightly transparent background */
+        z-index: 1; /* Ensure it is above other content */
+        overflow-y: auto; /* Allow scrolling if content overflows */
+    }
+
+    .navbar-toggler {
+        z-index: 2; /* Ensure the toggle button is above the collapsed menu */
+    }
+}

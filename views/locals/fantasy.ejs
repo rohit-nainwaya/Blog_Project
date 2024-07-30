@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CS56SCT6CM"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-CS56SCT6CM');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
+    <meta name="keywords" content="movies, movie reviews, film news, TV shows, latest movies, movie ratings" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Movie Zilla - Latest Movie News, Reviews, and More" />
+    <meta property="og:description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
+    <meta property="og:image" content="https://moviezilla.in/path-to-your-image.jpg" />
+    <meta property="og:url" content="https://moviezilla.in/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Movie Zilla - Latest Movie News, Reviews, and More" />
+    <meta name="twitter:description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
+    <meta name="twitter:image" content="https://moviezilla.in/path-to-your-image.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Fantasy Movies and Series | Movie Zilla</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="home-icon">
+                <a href="./" id="home" onclick="goHome()"><i class="fas fa-home"></i></a>
+            </div>
+            <a class="navbar-brand mx-auto" href="#">Top 10 Fantasy Movies</a>
+        </nav>
+        <div class="container mt-4">
+            <ol id="movieList" class="list-group">
+                <!-- Placeholder list items for fantasy movies -->
+                <li class="list-group-item" id="1"><a href="#" onclick="showMovieDetails('lordOfTheRings')">The Lord of the Rings: The Fellowship of the Ring (2001)</a></li>
+                <li class="list-group-item" id="2"><a href="#" onclick="showMovieDetails('gameOfThrones')">Game of Thrones (2011-2019)</a></li>
+                <li class="list-group-item" id="3"><a href="#" onclick="showMovieDetails('harryPotter')">Harry Potter and the Sorcerer's Stone (2001)</a></li>
+                <li class="list-group-item" id="4"><a href="#" onclick="showMovieDetails('narnia')">The Chronicles of Narnia: The Lion, the Witch and the Wardrobe (2005)</a></li>
+                <li class="list-group-item" id="5"><a href="#" onclick="showMovieDetails('theWitcher')">The Witcher (2019-Present)</a></li>
+                <li class="list-group-item" id="6"><a href="#" onclick="showMovieDetails('pansLabyrinth')">Pan's Labyrinth (2006)</a></li>
+                <li class="list-group-item" id="7"><a href="#" onclick="showMovieDetails('strangerThings')">Stranger Things (2016-Present)</a></li>
+                <li class="list-group-item" id="8"><a href="#" onclick="showMovieDetails('elite')">Elite (2018-Present)</a></li>
+                <li class="list-group-item" id="9"><a href="#" onclick="showMovieDetails('stardust')">Stardust (2007)</a></li>
+                <li class="list-group-item" id="10"><a href="#" onclick="showMovieDetails('shadowAndBone')">Shadow and Bone (2021-Present)</a></li>
+            </ol>
+
+            <div id="movieDetails" class="hidden mt-4">
+                <button class="btn btn-danger mb-3" onclick="goBack()">Back to List</button>
+                <h2 id="movieTitle" class="text-white"></h2>
+                <p id="movieDescription" class="text-white"></p>
+                <a id="ottLink" href="#" class="btn btn-primary mb-3" target="_blank">Watch on OTT Platform</a>
+                <div class="trailer">
+                    <h3 class="text-white">Movie Trailer</h3>
+                    <div class="iframe-container">
+                        <iframe id="movieTrailer" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="cast">
+                    <h3 class="text-white">Cast</h3>
+                    <div class="row" id="castList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/JS/fantasy.js"></script>
+</body>
+</html>
