@@ -1,5 +1,6 @@
 let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
 let baseUrl = 'https://api.themoviedb.org/3/trending/movie/day';
+let scrollPosition = 0;
 
 // Function to map country codes to full country names
 const countryCodes = {
@@ -89,6 +90,7 @@ async function fetchTrendingMovies(page = 1) {
     document.querySelectorAll('.movie-link').forEach(link => {
         link.addEventListener('click', async (event) => {
             event.preventDefault();
+            scrollPosition = window.scrollY;
             let movieId = event.currentTarget.getAttribute('data-id');
             await showMovieDetails(movieId);
         });
@@ -167,6 +169,7 @@ async function showMovieDetails(movieId) {
 function goBack() {
     document.getElementById('movieDetails').classList.add('hidden');
     document.querySelector('.movie_card').classList.remove('hidden');
+    window.scrollTo(0, scrollPosition);
 }
 
 // Infinite Scroll

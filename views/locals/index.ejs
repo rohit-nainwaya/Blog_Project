@@ -1,6 +1,13 @@
 <% layout('layouts/boilerplate') %>
 <body>
-    <header>
+    <header class="text-center my-5">
+        <div class="container">
+            <h1 class="display-4">Welcome to Movie Zilla</h1>
+            <p class="lead">Welcome to our movie hub, where we bring you the freshest and most exciting films across a wide array of genres. Whether you're a fan of heart-pounding action, side-splitting comedies, or thought-provoking dramas, we've got something for everyone. Dive into our curated selections and stay up-to-date with the latest releases in each category.</p>
+        </div>
+    </header>
+
+    <main>
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -15,7 +22,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active" type="button">
                         <a href="/Popular_Movies">
-                            <img src="/assets/home_page/inside_out.jpg" class="d-block w-100" alt="Popualr">
+                            <img src="assets/home_page/inside_out.jpg" class="d-block w-100" alt="Popualr">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Popular</h5>
                                 <p>Discover the most popular and trending films of the moment.</p>
@@ -24,7 +31,7 @@
                     </div>
                     <div class="carousel-item" type="button">
                         <a href="/Upcoming_Movies">
-                            <img src="/assets/home_page/sci-fi.jpg" class="d-block w-100" alt="Upcoming">
+                            <img src="assets/home_page/sci-fi.jpg" class="d-block w-100" alt="Upcoming">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Upcoming</h5>
                                 <p>Stay tuned for exciting new releases and upcoming films.</p>
@@ -86,13 +93,6 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-    </header>
-
-    <main>
-        <div class="container text-center">
-            <h1 class="display-4">Welcome to Movie Zilla</h1>
-            <p class="lead">Welcome to our movie hub, where we bring you the freshest and most exciting films across a wide array of genres. Whether you're a fan of heart-pounding action, side-splitting comedies, or thought-provoking dramas, we've got something for everyone. Dive into our curated selections and stay up-to-date with the latest releases in each category.</p>
-        </div>
 
             <div class="blog-content">
                 <section class="blog">

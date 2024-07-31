@@ -1,5 +1,6 @@
 let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
 let baseUrl = 'https://api.themoviedb.org/3/tv/airing_today';
+let scrollPosition = 0;
 
 // Function to map country codes to full country names
 const countryCodes = {
@@ -75,6 +76,7 @@ async function fetchAiringTodayShows(page = 1) {
         document.querySelectorAll('.tvshow-link').forEach(link => {
             link.addEventListener('click', async (event) => {
                 event.preventDefault();
+                scrollPosition = window.scrollY;
                 let tvshowId = event.currentTarget.getAttribute('data-id');
                 await showTVShowDetails(tvshowId);
             });
@@ -140,6 +142,7 @@ async function showTVShowDetails(tvshowId) {
 function goBack() {
     document.getElementById('tvshowDetails').classList.add('hidden');
     document.querySelector('.tvshow_card').classList.remove('hidden');
+    window.scrollTo(0, scrollPosition);
 }
 
 // Infinite Scroll
