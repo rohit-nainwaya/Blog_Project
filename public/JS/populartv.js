@@ -68,7 +68,7 @@ async function fetchPopularTVShows(page = 1) {
                 <div class="card-body">
                     <h5 class="card-title">${tvshow.name}</h5>
                     <p class="card-text">Popularity: ${tvshow.popularity}</p>
-                    <p class="card-text">Country: ${tvshow.origin_country.map(getCountryName).join(', ')}</p>
+                    <p class="card-text text-green">Country: ${tvshow.origin_country.map(getCountryName).join(', ')}</p>
                 </div>
             </a>
         `;

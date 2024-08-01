@@ -1,8 +1,8 @@
 body {
     background-color: #1b1818;
     color: white;
-    font-family: "Edu AU VIC WA NT Hand", cursive;
-   font-optical-sizing: auto;
+    font-family: "Comic Neue", cursive;
+  font-optical-sizing: auto;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
