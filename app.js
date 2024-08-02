@@ -5,6 +5,10 @@ const port = 8080;
 const ejsMate = require("ejs-mate");
 const path = require("path");
 
+function capitalizeWords(str) {
+    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+};
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
@@ -102,6 +106,12 @@ app.get('/Airing_Shows_Today', (req, res) =>{
 
 app.get('/Top_Rated_Shows', (req, res) =>{
     res.render('api/topratedtv.ejs');
+});
+
+app.get('/search_results', (req, res) => {
+    let { q } = req.query || '';
+    q = capitalizeWords(q).trim();
+    res.render('api/search_results.ejs', { query: q });
 });
 
 app.get('/about', (req, res) =>{

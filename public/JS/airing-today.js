@@ -106,8 +106,8 @@ async function showTVShowDetails(tvshowId) {
             const actorProfilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : '/assets/home_page/alt.jpg'; // Fallback image for actor
             castCard.innerHTML = `
                 <img src="${actorProfilePath}" class="img-fluid" alt="${actor.name}">
-                <p class="text-white">${actor.name}</p>
-                <p class="text-muted">${actor.character}</p>
+                <p class="text-green">${actor.name}</p>
+                <p class="text-white">${actor.character}</p>
             `;
             castList.appendChild(castCard);
         });

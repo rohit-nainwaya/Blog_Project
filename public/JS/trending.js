@@ -2,40 +2,6 @@ let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
 let baseUrl = 'https://api.themoviedb.org/3/trending/movie/day';
 let scrollPosition = 0;
 
-// Function to map country codes to full country names
-const countryCodes = {
-    "US": "United States",
-    "GB": "United Kingdom",
-    "CA": "Canada",
-    "IN": "India",
-    "CN": "China",
-    "KR": "South Korea",
-    "ZA": "South Africa",
-    "NL": "Netherlands",
-    "JP": "Japan",
-    "DE": "Germany",
-    "ES": "Spain",
-    "PT": "Portugal",
-    "AU": "Australia",
-    "PE": "Peru",
-    "CO": "Colombia",
-    "CL": "Chile",
-    "HK": "Hong Kong",
-    "FI": "Finland",
-    "AR": "Argentina",
-    "FR": "France",
-    "IT": "Italy",
-    "MX": "Mexico",
-    "PL": "Poland",
-    "BR": "Brazil",
-    "TR": "Turkey",
-    "PH": "Philippines"
-};
-
-function getCountryName(code) {
-    return countryCodes[code] || code;
-}
-
 // Fetch a single page of popular movies
 async function getTrendingMovies(page = 1) {
     try {
@@ -111,7 +77,7 @@ async function getWatchProviders(movieId) {
 // Show movie details
 async function showMovieDetails(movieId) {
     const movieDetails = await getMovieDetails(movieId);
-    const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => getCountryName(c.iso_3166_1)).join(', ') : 'Unknown';
+    const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => c.name).join(', ') : 'Unknown';
     let url2 = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos,credits`;
     try {
         let res = await axios.get(url2);
@@ -133,8 +99,8 @@ async function showMovieDetails(movieId) {
             const actorProfilePath = actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : '/assets/home_page/alt.jpg'; // Fallback image for actor
             castCard.innerHTML = `
                 <img src="${actorProfilePath}" class="img-fluid" alt="${actor.name}">
-                <p class="text-white">${actor.name}</p>
-                <p class="text-muted">${actor.character}</p>
+                <p class="text-green">${actor.name}</p>
+                <p class="text-white">${actor.character}</p>
             `;
             castList.appendChild(castCard);
         });

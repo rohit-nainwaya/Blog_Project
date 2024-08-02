@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate2') %>
+<body>
+    <h3 class="sticky">Search Results for "<%= query %>"</h3>
+    <div class="container-fluid px-0">
+        <div class="container mt-4">
+            <div class="movie_card"></div>
+            <div id="movieDetails" class="hidden mt-4">
+                <button class="btn btn-danger mb-3" onclick="goBack()">Back to List</button>
+                <h2 id="movieTitle" class="text-white"></h2>
+                <p id="movieDescription" class="text-white"></p>
+                <p id="movieCountry" class="text-green"></p>
+                <a id="ottLink" href="#" class="btn btn-primary mb-3" target="_blank">Watch on OTT Platform</a>
+                <div class="trailer">
+                    <h3 class="text-white">Movie Trailer</h3>
+                    <div class="iframe-container">
+                        <iframe id="movieTrailer" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="cast">
+                    <h3 class="text-white">Cast</h3>
+                    <div class="row" id="castList"></div>
+                </div>
+                <div class="where-to-watch mt-4">
+                    <h3 class="text-white">Where to Watch</h3>
+                    <ul id="watchProvidersList" class="text-white"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Pass query parameter to JavaScript
+        const query = "<%= query %>";
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/JS/search_results.js"></script>
+</body>
+</html>
