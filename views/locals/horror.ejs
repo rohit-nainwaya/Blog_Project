@@ -1,47 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CS56SCT6CM"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-CS56SCT6CM');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
-    <meta name="keywords" content="movies, movie reviews, film news, TV shows, latest movies, movie ratings" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="Movie Zilla - Latest Movie News, Reviews, and More" />
-    <meta property="og:description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
-    <meta property="og:image" content="https://moviezilla.in/path-to-your-image.jpg" />
-    <meta property="og:url" content="https://moviezilla.in/" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Movie Zilla - Latest Movie News, Reviews, and More" />
-    <meta name="twitter:description" content="Movie Zilla offers the latest news, in-depth reviews, and detailed information on movies and TV shows. Discover your next favorite film with our comprehensive content." />
-    <meta name="twitter:image" content="https://moviezilla.in/path-to-your-image.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/home_page/mvz_logo.webp">
-    <title>Top 10 Horror Movies | Movie Zilla</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/CSS/style.css">
-</head>
+<% layout('layouts/boilerplate3') %>
 <body>
+    <h3 class="sticky">Top 10 Horror Movies & Shows</h3>
     <div class="container-fluid px-0">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="home-icon">
-                <a href="./" id="home" onclick="goHome()"><i class="fas fa-home"></i></a>
-            </div>            
-            <a class="navbar-brand mx-auto" href="#">Top 10 Horror Movies</a>
-        </nav>
         <div class="container mt-4">
             <ol id="movieList" class="list-group">
                 <li class="list-group-item" id="1"><a href="#" onclick="showMovieDetails('exorcist')">The Exorcist (1973)</a></li>

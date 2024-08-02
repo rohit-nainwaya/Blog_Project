@@ -101,41 +101,46 @@ const movieData = {
     }    
 };
 
-function showMovieDetails(movieKey) {
-    const movie = movieData[movieKey];
+function showMovieDetails(movieId) {
+    const movie = movieData[movieId];
+    if (movie) {
+        document.getElementById('movieTitle').textContent = movie.title;
+        document.getElementById('movieDescription').textContent = movie.description;
+        document.getElementById('movieTrailer').src = movie.trailer;
+        document.getElementById('ottLink').href = movie.ott;
 
-    document.getElementById('movieTitle').innerText = movie.title;
-    document.getElementById('movieDescription').innerText = movie.description;
-    document.getElementById('movieTrailer').src = movie.trailer;
-    document.getElementById('ottLink').href = movie.ott;
+        const castList = document.getElementById('castList');
+        castList.innerHTML = '';
 
-    const castList = document.getElementById('castList');
-    castList.innerHTML = '';
-    movie.cast.forEach(actor => {
-        const actorCard = document.createElement('div');
-        actorCard.className = 'card';
-        actorCard.innerHTML = `
-            <img src="${actor.img}" alt="${actor.name}">
-            <div class="card-body">
-                <h5 class="card-title">${actor.name}</h5>
-                <p class="card-text">Role: ${actor.role}</p>
-            </div>
-        `;
-        castList.appendChild(actorCard);
-    });
+        movie.cast.forEach(cast => {
+            const castCard = document.createElement('div');
+            castCard.classList.add('col-sm-6', 'col-md-4', 'col-lg-3', 'mb-4');
+            castCard.innerHTML = `
+                <div class="card text-white bg-dark">
+                    <img data-src="${cast.img}" class="card-img-top lazy" alt="${cast.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${cast.name}</h5>
+                        <p class="card-text">Role: ${cast.role}</p>
+                    </div>
+                </div>
+            `;
+            castList.appendChild(castCard);
+        });
 
-    document.getElementById('movieList').classList.add('hidden');
-    document.getElementById('movieDetails').classList.remove('hidden');
-}
+        // Lazy load images
+        const lazyImages = document.querySelectorAll('img.lazy');
+        lazyImages.forEach(img => {
+            img.src = img.getAttribute('data-src');
+            img.classList.remove('lazy');
+            img.classList.add('lazy-loaded');
+        });
+
+        document.getElementById('movieDetails').classList.remove('hidden');
+        document.getElementById('movieList').classList.add('hidden');
+    }
+};
 
 function goBack() {
     document.getElementById('movieDetails').classList.add('hidden');
     document.getElementById('movieList').classList.remove('hidden');
-    document.getElementById('movieTrailer').src = '';
-}
-
-function goHome() {
-    document.getElementById('movieDetails').classList.add('hidden');
-    document.getElementById('movieList').classList.remove('hidden');
-    document.getElementById('movieTrailer').src = '';
 };
