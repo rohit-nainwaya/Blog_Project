@@ -103,13 +103,12 @@ async function showDetails(id, type) {
     const countries = details.production_countries ? details.production_countries.map(c => c.name).join(', ') : 'Unknown';
     let title = type === 'movie' ? details.title : details.name;
     let overview = details.overview;
-    let ottLink = `https://www.themoviedb.org/${type}/${id}`;
     let trailer = details.videos.results.find(video => video.type === "Trailer");
 
     document.getElementById('movieTitle').innerText = title;
     document.getElementById('movieDescription').innerText = overview;
     document.getElementById('movieCountry').innerText = `Country: ${countries}`;
-    document.getElementById('ottLink').href = ottLink;
+    document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
     document.getElementById('movieTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 
     let castList = document.getElementById('castList');

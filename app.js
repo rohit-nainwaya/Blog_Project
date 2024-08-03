@@ -64,14 +64,6 @@ app.get('/Top_Animation', (req, res) =>{
     res.render('locals/animation.ejs');
 });
 
-app.get('/Top_Musical', (req, res) =>{
-    res.render('locals/musical.ejs');
-});
-
-app.get('/Top_Western', (req, res) =>{
-    res.render('locals/western.ejs');
-});
-
 app.get('/Top_Biographical', (req, res) =>{
     res.render('locals/biographical.ejs');
 });

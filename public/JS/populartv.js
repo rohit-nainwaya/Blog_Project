@@ -105,9 +105,9 @@ async function showTVShowDetails(tvshowId) {
         
         document.getElementById('tvshowTitle').innerText = tvshow.name;
         document.getElementById('tvshowDescription').innerText = tvshow.overview;
-        document.getElementById('ottLink').href = `https://www.themoviedb.org/tv/${tvshow.id}`;
+        document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
         let trailer = tvshow.videos.results.find(video => video.type === "Trailer");
-        document.getElementById('tvshowTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
+        document.getElementById('tvshowTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : ``;
 
         let castList = document.getElementById('castList');
         castList.innerHTML = '';

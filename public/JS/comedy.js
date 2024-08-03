@@ -13,7 +13,7 @@ const movieData = {
         title: "Airplane! (1980)",
         description: "Airplane! is a parody comedy film directed by Jim Abrahams, David Zucker, and Jerry Zucker. The film satirizes the disaster film genre, particularly the 1957 film Zero Hour! and the 1970s Airport series. Airplane! follows the absurd and chaotic events on board a passenger plane after the crew falls ill from food poisoning. Known for its rapid-fire jokes and slapstick humor, Airplane! is considered one of the funniest comedies of all time.",
         trailer: "https://www.youtube.com/embed/07pPmCfKi3U",
-        ott: "https://www.primevideo.com/detail/Airplane/0MF27TDS99IGSDWV6G5YQP6L2D",
+        ott: "https://amzn.to/3yr2kKQ",
         cast: [
             { name: "Robert Hays", role: "Ted Striker", img: "/assets/comedy/Robert_Hays.jpg" },
             { name: "Julie Hagerty", role: "Elaine Dickinson", img: "/assets/comedy/Julie_Hagerty.jpg" },
@@ -23,7 +23,7 @@ const movieData = {
         title: "Groundhog Day (1993)",
         description: "Groundhog Day is a fantasy comedy film directed by Harold Ramis and starring Bill Murray as Phil Connors, a cynical TV weatherman who finds himself stuck in a time loop, repeating the same day over and over again. As Phil relives Groundhog Day in the small town of Punxsutawney, Pennsylvania, he undergoes a transformation, learning to appreciate life and love. Groundhog Day is celebrated for its clever premise and Murray's performance.",
         trailer: "https://www.youtube.com/embed/GncQtURdcE4",
-        ott: "https://www.primevideo.com/detail/Groundhog-Day/0QX3YI41P3QILLCJHBBMYE4DVP",
+        ott: "https://amzn.to/3yr2kKQ",
         cast: [
             { name: "Bill Murray", role: "Phil Connors", img: "/assets/comedy/Bill_Murray.jpg" },
             { name: "Andie MacDowell", role: "Rita Hanson", img: "/assets/comedy/Andie_MacDowell.jpg" },
@@ -73,7 +73,7 @@ const movieData = {
         title: "Parks and Recreation (2009-2015)",
         description: "Parks and Recreation is an American mockumentary sitcom created by Greg Daniels and Michael Schur. Set in the fictional town of Pawnee, Indiana, the series follows the quirky employees of the Parks and Recreation Department as they navigate local government bureaucracy and pursue their various passions and projects. Led by the optimistic and enthusiastic Leslie Knope, played by Amy Poehler, the show celebrates friendship, community, and the absurdity of small-town politics.",
         trailer: "https://www.youtube.com/embed/5IZWeAwdJ-s",
-        ott: "https://www.primevideo.com/detail/Parks-And-Recreation/0IMOVVKFVSJLZKRHDHZ7HNSWUT",
+        ott: "https://amzn.to/3yr2kKQ",
         cast: [
             { name: "Amy Poehler", role: "Leslie Knope", img: "/assets/comedy/Amy_Poehler.jpg" },
             { name: "Nick Offerman", role: "Ron Swanson", img: "/assets/comedy/Nick_Offerman.jpg" },

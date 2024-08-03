@@ -86,7 +86,7 @@ async function showMovieDetails(movieId) {
         document.getElementById('movieTitle').innerText = movie.title;
         document.getElementById('movieDescription').innerText = movie.overview;
         document.getElementById('movieCountry').innerText = `Country: ${countries}`;
-        document.getElementById('ottLink').href = `https://www.themoviedb.org/movie/${movie.id}`;
+        document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
         let trailer = movie.videos.results.find(video => video.type === "Trailer");
         document.getElementById('movieTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 
