@@ -21,10 +21,6 @@ body {
     height: 6rem !important;
 }
 
-.navbar .container-fluid{
-    margin-left: 2% !important;
-}
-
 /* .navbar-nav .nav-item:hover .dropdown-menu {
     display: block !important;
 } */
@@ -271,6 +267,35 @@ footer .social a:hover {
 @media (min-width: 992px) {
     .navbar-brand {
         display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        flex-basis: auto;
+        flex-grow: 1;
+    }
+
+    .navbar-toggler {
+        order: 1;
+        padding-left: 0;
+        margin-left: 0;
+        border: none;
+        outline: none;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active,
+    .navbar-toggler-icon {
+        box-shadow: none;
+        outline: none;
+        border: none;
+    }
+
+    .mobile-search-bar {
+        order: 2;
+        flex-grow: 1;
+        margin-right: 0;
     }
 }
 
