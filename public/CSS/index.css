@@ -174,11 +174,11 @@ footer .social a:hover {
     }
 
     .carousel-item img {
-        height: 400px;
+        height: 300px;
     }
 
     .card .card-img {
-        height: 250px;
+        height: 300px;
     }
 
     header {
@@ -192,11 +192,11 @@ footer .social a:hover {
 
 @media (max-width: 768px) {
     .carousel-item {
-        height: 300px;
+        height: 200px;
     }
 
     .carousel-item img {
-        height: 300px;
+        height: 200px;
     }
 
     .card .card-img {
