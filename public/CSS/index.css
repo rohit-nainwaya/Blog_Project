@@ -296,6 +296,7 @@ footer .social a:hover {
         order: 2;
         flex-grow: 1;
         margin-right: 0;
+        flex-basis: 100px;
     }
 }
 
