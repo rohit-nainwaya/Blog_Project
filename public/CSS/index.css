@@ -8,6 +8,10 @@ body {
     min-height: 100vh;
 }
 
+h1{
+    color: #9acd32;
+}
+
 .container{
     flex: 1;
 }
@@ -224,11 +228,11 @@ footer .social a:hover {
 }
 
 .blog h1{
-    color: #FF5F00;
+    color: #9acd32;
 }
 
 .blog h2{
-    color: #BF5F00;
+    color: #9ab132;
 }
 
 /* Ensure the dropdown menus have a proper background color */
