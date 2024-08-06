@@ -12,6 +12,27 @@ h1{
     color: #9acd32;
 }
 
+.btn{
+    color: yellowgreen;
+    border: 2px solid #9acd32;
+}
+
+.btn:hover{
+    background-color: #9acd32;
+    color: #212529;
+    font-weight: bold;
+}
+
+.inp{
+    border: 2px solid #9acd32;
+}
+
+input:focus {
+    border: 2px solid #9acd32 !important;
+    outline: none; /* Remove the default outline */
+    box-shadow: 0 0 10px #9acd32 !important; /* Adjust shadow as needed */
+}
+
 .container{
     flex: 1;
 }
