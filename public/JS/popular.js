@@ -2,24 +2,11 @@ let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
 let baseUrl = 'https://api.themoviedb.org/3/movie/popular';
 let scrollPosition = 0;
 
-// Utility function for fetching with retries and exponential backoff
-async function fetchWithRetry(url, options = {}, retries = 3, backoff = 300) {
-    try {
-        let res = await axios.get(url, options);
-        return res.data;
-    } catch (e) {
-        if (retries === 0) throw e;
-        await new Promise(resolve => setTimeout(resolve, backoff));
-        return fetchWithRetry(url, options, retries - 1, backoff * 2);
-    }
-}
-
 // Fetch a single page of popular movies
 async function getPopularMovies(page = 1) {
     try {
-        let url = `${baseUrl}?api_key=${apiKey}&page=${page}`;
-        let data = await fetchWithRetry(url);
-        return data.results || [];
+        let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
+        return res.data.results;
     } catch (e) {
         console.error(`Error fetching popular movies: ${e}`);
         return [];
@@ -29,22 +16,11 @@ async function getPopularMovies(page = 1) {
 // Fetch movie details to get production countries
 async function getMovieDetails(movieId) {
     try {
-        let url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
-        return await fetchWithRetry(url);
+        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
+        return res.data;
     } catch (e) {
         console.error(`Error fetching movie details: ${e}`);
         return null;
-    }
-}
-
-// Fetch watch providers for a movie
-async function getWatchProviders(movieId) {
-    try {
-        let url = `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`;
-        return await fetchWithRetry(url);
-    } catch (e) {
-        console.error(`Error fetching watch providers: ${e}`);
-        return {};
     }
 }
 
@@ -52,10 +28,11 @@ async function getWatchProviders(movieId) {
 async function fetchPopularMovies(page = 1) {
     let results = await getPopularMovies(page);
 
-    if (!Array.isArray(results) || results.length === 0) {
+    if (results.length === 0) {
         console.log('No results found.');
         return;
     }
+
 
     let movie_card = document.querySelector('.movie_card');
     for (let movie of results) {
@@ -69,7 +46,7 @@ async function fetchPopularMovies(page = 1) {
                 <img data-src="${posterPath}" class="card-img-top lazyload" alt="${movie.title}">
                 <div class="card-body">
                     <h5 class="card-title">${movie.title}</h5>
-                    <p class="card-text">Popularity: ${movie.popularity}</p>
+                    <p class="card-text">Release Date: ${movie.release_date}</p>
                 </div>
             </a>
         `;
@@ -86,19 +63,34 @@ async function fetchPopularMovies(page = 1) {
     });
 }
 
+// Fetch watch providers for a movie
+async function getWatchProviders(movieId) {
+    try {
+        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`);
+        return res.data.results;
+    } catch (e) {
+        console.error(`Error fetching watch providers: ${e}`);
+        return {};
+    }
+}
+
 // Show movie details
 async function showMovieDetails(movieId) {
     const movieDetails = await getMovieDetails(movieId);
     const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => c.name).join(', ') : 'Unknown';
     let url2 = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos,credits`;
     try {
-        let res = await fetchWithRetry(url2);
-        let movie = res;
+        let res = await axios.get(url2);
+        let movie = res.data;
 
         document.getElementById('movieTitle').innerText = movie.title;
         document.getElementById('movieDescription').innerText = movie.overview;
         document.getElementById('movieCountry').innerText = `Country: ${countries}`;
-        document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
+        if(countries == "India"){
+            document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
+        }else{
+            document.getElementById('ottLink').href = `https://amzn.to/4dBo6dy`;
+        }
         let trailer = movie.videos.results.find(video => video.type === "Trailer");
         document.getElementById('movieTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 

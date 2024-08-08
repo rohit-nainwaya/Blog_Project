@@ -206,6 +206,30 @@ body {
     } */
 }
 
+.s-btn{
+    color: yellowgreen;
+    border: 2px solid #9acd32;
+}
+
+.s-btn:hover{
+    background-color: #9acd32;
+    color: #212529;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: #9acd32;
+    color: #212529;
+    font-weight: bold;
+    border: 2px solid #9acd32;
+}
+
+input:focus {
+    border: 2px solid #9acd32 !important;
+    outline: none; /* Remove the default outline */
+    box-shadow: 0 0 10px #9acd32 !important; /* Adjust shadow as needed */
+}
+
 footer {
     background-color: #232323;
     color: white;
