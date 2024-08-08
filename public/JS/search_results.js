@@ -108,7 +108,11 @@ async function showDetails(id, type) {
     document.getElementById('movieTitle').innerText = title;
     document.getElementById('movieDescription').innerText = overview;
     document.getElementById('movieCountry').innerText = `Country: ${countries}`;
-    document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
+    if(countries == "India"){
+        document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
+    }else{
+        document.getElementById('ottLink').href = `https://amzn.to/4dBo6dy`;
+    }
     document.getElementById('movieTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 
     let castList = document.getElementById('castList');
