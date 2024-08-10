@@ -24,6 +24,17 @@ async function getMovieDetails(movieId) {
     }
 }
 
+// Geolocation fallback for IP-based location detection
+async function getCountryByIP() {
+    try {
+        let res = await axios.get('https://ipapi.co/json/');
+        return res.data.country_code;
+    } catch (e) {
+        console.error('Error fetching IP location:', e);
+        return 'US'; // Default to US if there's an error
+    }
+}
+
 // Fetch and display a page of popular movies
 async function fetchPopularMovies(page = 1) {
     let results = await getPopularMovies(page);
@@ -32,7 +43,6 @@ async function fetchPopularMovies(page = 1) {
         console.log('No results found.');
         return;
     }
-
 
     let movie_card = document.querySelector('.movie_card');
     for (let movie of results) {
@@ -79,6 +89,7 @@ async function showMovieDetails(movieId) {
     const movieDetails = await getMovieDetails(movieId);
     const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => c.name).join(', ') : 'Unknown';
     let url2 = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos,credits`;
+
     try {
         let res = await axios.get(url2);
         let movie = res.data;
@@ -86,11 +97,41 @@ async function showMovieDetails(movieId) {
         document.getElementById('movieTitle').innerText = movie.title;
         document.getElementById('movieDescription').innerText = movie.overview;
         document.getElementById('movieCountry').innerText = `Country: ${countries}`;
-        if(countries == "India"){
-            document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
-        }else{
-            document.getElementById('ottLink').href = `https://amzn.to/4dBo6dy`;
+        
+        // Get user country
+        let countryCode = await getCountryByIP();
+        let ottLinkElement = document.getElementById('ottLink');
+
+        // Set the appropriate Amazon link based on the user's country
+        switch (countryCode) {
+            case 'IN':
+                ottLinkElement.href = `https://amzn.to/3yr2kKQ`;
+                break;
+            case 'US':
+                ottLinkElement.href = `https://amzn.to/4dBo6dy`;
+                break;
+            case 'UK':
+                ottLinkElement.href = `https://amzn.to/46EBCLa`;
+                break;
+            case 'CA':
+                ottLinkElement.href = `https://amzn.to/3yyeUb7`;
+                break;
+            case 'DE':
+                ottLinkElement.href = `https://amzn.to/3M1pJFO`;
+                break;
+            case 'JP':
+                ottLinkElement.href = `https://amzn.to/3AkJANH`;
+                break;
+            case 'FR':
+                ottLinkElement.href = `https://amzn.to/46EevAD`;
+                break;
+            case 'ES':
+                ottLinkElement.href = `https://amzn.to/4ch9MWx`;
+                break;    
+            default:
+                ottLinkElement.href = `https://amzn.to/4dBo6dy`; // Fallback
         }
+
         let trailer = movie.videos.results.find(video => video.type === "Trailer");
         document.getElementById('movieTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 

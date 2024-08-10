@@ -13,6 +13,17 @@ async function getSearchResults(query, page = 1) {
     }
 }
 
+// Geolocation fallback for IP-based location detection
+async function getCountryByIP() {
+    try {
+        let res = await axios.get('https://ipapi.co/json/');
+        return res.data.country_code;
+    } catch (e) {
+        console.error('Error fetching IP location:', e);
+        return 'US'; // Default to US if there's an error
+    }
+}
+
 async function getDetails(id, type) {
     let url;
     if (type === 'movie') {
@@ -108,11 +119,40 @@ async function showDetails(id, type) {
     document.getElementById('movieTitle').innerText = title;
     document.getElementById('movieDescription').innerText = overview;
     document.getElementById('movieCountry').innerText = `Country: ${countries}`;
-    if(countries == "India"){
-        document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
-    }else{
-        document.getElementById('ottLink').href = `https://amzn.to/4dBo6dy`;
-    }
+     // Get user country
+     let countryCode = await getCountryByIP();
+     let ottLinkElement = document.getElementById('ottLink');
+
+     // Set the appropriate Amazon link based on the user's country
+     switch (countryCode) {
+         case 'IN':
+             ottLinkElement.href = `https://amzn.to/3yr2kKQ`;
+             break;
+         case 'US':
+             ottLinkElement.href = `https://amzn.to/4dBo6dy`;
+             break;
+         case 'UK':
+             ottLinkElement.href = `https://amzn.to/46EBCLa`;
+             break;
+         case 'CA':
+             ottLinkElement.href = `https://amzn.to/3yyeUb7`;
+             break;
+         case 'DE':
+             ottLinkElement.href = `https://amzn.to/3M1pJFO`;
+             break;
+         case 'JP':
+             ottLinkElement.href = `https://amzn.to/3AkJANH`;
+             break;
+         case 'FR':
+             ottLinkElement.href = `https://amzn.to/46EevAD`;
+             break;
+         case 'ES':
+             ottLinkElement.href = `https://amzn.to/4ch9MWx`;
+             break;    
+         default:
+             ottLinkElement.href = `https://amzn.to/4dBo6dy`; // Fallback
+     }
+     
     document.getElementById('movieTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
 
     let castList = document.getElementById('castList');

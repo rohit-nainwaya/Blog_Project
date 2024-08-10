@@ -1,3 +1,14 @@
+// Geolocation fallback for IP-based location detection
+async function getCountryByIP() {
+    try {
+        let res = await axios.get('https://ipapi.co/json/');
+        return res.data.country_code;
+    } catch (e) {
+        console.error('Error fetching IP location:', e);
+        return 'US'; // Default to US if there's an error
+    }
+}
+
 const movieData = {
     shawshankRedemption: {
         title: "The Shawshank Redemption (1994)",

@@ -48,6 +48,17 @@ async function getAiringToday(page = 1) {
     }
 }
 
+    // Geolocation fallback for IP-based location detection
+    async function getCountryByIP() {
+        try {
+            let res = await axios.get('https://ipapi.co/json/');
+            return res.data.country_code;
+        } catch (e) {
+            console.error('Error fetching IP location:', e);
+            return 'US'; // Default to US if there's an error
+        }
+    }
+
 // Fetch and display a page of TV shows airing today
 async function fetchAiringTodayShows(page = 1) {
     let results = await getAiringToday(page);
@@ -93,7 +104,40 @@ async function showTVShowDetails(tvshowId) {
         
         document.getElementById('tvshowTitle').innerText = tvshow.name;
         document.getElementById('tvshowDescription').innerText = tvshow.overview;
-        document.getElementById('ottLink').href = `https://amzn.to/3yr2kKQ`;
+       // Get user country
+       let countryCode = await getCountryByIP();
+       let ottLinkElement = document.getElementById('ottLink');
+
+       // Set the appropriate Amazon link based on the user's country
+       switch (countryCode) {
+           case 'IN':
+               ottLinkElement.href = `https://amzn.to/3yr2kKQ`;
+               break;
+           case 'US':
+               ottLinkElement.href = `https://amzn.to/4dBo6dy`;
+               break;
+           case 'UK':
+               ottLinkElement.href = `https://amzn.to/46EBCLa`;
+               break;
+           case 'CA':
+               ottLinkElement.href = `https://amzn.to/3yyeUb7`;
+               break;
+           case 'DE':
+               ottLinkElement.href = `https://amzn.to/3M1pJFO`;
+               break;
+           case 'JP':
+               ottLinkElement.href = `https://amzn.to/3AkJANH`;
+               break;
+           case 'FR':
+               ottLinkElement.href = `https://amzn.to/46EevAD`;
+               break;
+           case 'ES':
+               ottLinkElement.href = `https://amzn.to/4ch9MWx`;
+               break;    
+           default:
+               ottLinkElement.href = `https://amzn.to/4dBo6dy`; // Fallback
+       }
+
         let trailer = tvshow.videos.results.find(video => video.type === "Trailer");
         document.getElementById('tvshowTrailer').src = trailer ? `https://www.youtube.com/embed/${trailer.key}` : '';
         document.getElementById('country').innerText = `Country: ${tvshow.origin_country.join(', ')}`;
