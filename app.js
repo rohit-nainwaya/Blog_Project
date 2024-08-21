@@ -118,6 +118,10 @@ app.get('/terms', (req, res) =>{
     res.render('policies/terms.ejs');
 });
 
+app.get('/copyright', (req, res) =>{
+    res.render('policies/copyright.ejs');
+});
+
 app.get('/privacy', (req, res) =>{
     res.render('policies/privacy.ejs');
 });
