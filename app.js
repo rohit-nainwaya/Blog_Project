@@ -5,6 +5,8 @@ const port = 8080;
 const ejsMate = require("ejs-mate");
 const path = require("path");
 
+app.use('/ads.txt', express.static(path.join(__dirname, 'ads.txt')));
+
 function capitalizeWords(str) {
     return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 };
