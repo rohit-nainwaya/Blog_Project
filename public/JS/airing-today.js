@@ -1,4 +1,6 @@
-let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
+// Client-side should not use Node's `require` or `dotenv`.
+// The API key is injected into the page as `window.API_KEY` by the EJS template.
+const apiKey = window.API_KEY || '';
 let baseUrl = 'https://api.themoviedb.org/3/tv/airing_today';
 let scrollPosition = 0;
 
@@ -39,6 +41,7 @@ function getCountryName(code) {
 // Fetch a single page of TV shows airing today
 async function getAiringToday(page = 1) {
     try {
+        if (!apiKey) throw new Error('API key is not set (window.API_KEY)');
         let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
         let results = res.data.results;
         return results;

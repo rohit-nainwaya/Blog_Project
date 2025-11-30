@@ -1,4 +1,6 @@
-let apiKey = '2db5bc75c33eb661cc482365062fa0e5';
+// Client-side should not use Node's `require` or `dotenv`.
+// The API key is injected into the page as `window.API_KEY` by the EJS template.
+const apiKey = window.API_KEY || '';
 let baseUrl = 'https://api.themoviedb.org/3/tv/top_rated';
 let scrollPosition = 0;
 

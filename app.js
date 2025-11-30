@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const app = express();
 const port = 8080;
 
@@ -7,7 +8,7 @@ const ejsMate = require("ejs-mate");
 const path = require("path");
 
 // Middleware
-app.use(cors());  // Allowing CORS, customize if needed
+app.use(cors());  // Allowing CORS
 app.use(express.urlencoded({ extended: true }));
 app.use('/ads.txt', express.static(path.join(__dirname, 'ads.txt')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
@@ -108,7 +109,7 @@ app.get('/Top_Rated_Shows', (req, res) => {
     res.render('api/topratedtv.ejs');
 });
 
-// Search route with capitalization
+
 app.get('/search_results', (req, res) => {
     let { q } = req.query || '';
     q = capitalizeWords(q).trim();

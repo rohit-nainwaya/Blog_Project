@@ -19,14 +19,6 @@ body {
     font-family: 'Arial', sans-serif;
 } */
 
-.navbar {
-    position: sticky !important;
-    top: 0px !important;
-    left: 0px !important;
-    background-color: #1b1818;
-    z-index: 3;
-    height: 6rem !important;
-}
 
 .sticky{
     position: sticky !important;
@@ -40,19 +32,6 @@ body {
 /* .navbar-nav .nav-item:hover .dropdown-menu {
     display: block !important;
 } */
-
-.navbar-nav .nav-link {
-    color: white;
-    transition: color 0.3s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #17a2b8;
-}
-
-.custom-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
-}
 
 .container-fluid {
     background-color: #000;
@@ -191,19 +170,11 @@ body {
 
 
 @media (max-width: 576px) {
-    /* .navbar-brand {
-        font-size: 4vw;  Decrease font size for smaller screens 
-    } */
 
     .card {
         width: 40% /* Make cards full width on smaller screens */
     }
 
-    /* #home {
-        font-size: 1.5rem;
-        top: 5px; /* Adjust top position for smaller screens 
-        left: 5px; /* Adjust left position for smaller screens 
-    } */
 }
 
 .s-btn{
@@ -230,163 +201,6 @@ input:focus {
     box-shadow: 0 0 10px #9acd32 !important; /* Adjust shadow as needed */
 }
 
-footer {
-    background-color: #232323;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 10%;
-}
-
-footer .social {
-    padding: 0;
-}
-
-footer .social a {
-    color: #ffffff;
-    opacity: 0.8;
-    padding: 0 10px;
-    font-size: 1.5em;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-footer .social a:hover {
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-.footer-links {
-    margin-top: 10px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
 .text-green{
     color: yellowgreen;
-}
-
-.footer-links a:hover {
-    color: #17a2b8;
-}
-
-.footer-links a:not(:last-child)::after {
-    content: "|";
-    margin: 0 10px;
-    color: #ccc;
-}
-
-@media (max-width: 768px) {
-    .footer-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-links a {
-        margin: 5px 0;
-    }
-}
-
-
-@media (max-width: 991px) {
-    .navbar {
-        height: auto;
-    }
-}
-
-/* Ensure the dropdown menus have a proper background color */
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,.55);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover, 
-.navbar-dark .navbar-nav .nav-link:focus {
-    color: rgba(255,255,255,.75);
-}
-
-.navbar-dark .navbar-nav .dropdown-menu {
-    background-color: #343a40;
-}
-
-.navbar-dark .navbar-nav .dropdown-menu .dropdown-item {
-    color: rgba(255,255,255,.75);
-}
-
-.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:hover, 
-.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:focus {
-    color: rgba(255,255,255,.75);
-    background-color: rgba(255,255,255,.15);
-}
-
-/* Custom CSS for styling */
-.custom-toggler-icon {
-    color: white;
-}
-
-.navbar-brand {
-    display: none;
-}
-
-@media (min-width: 992px) {
-    .navbar-brand {
-        display: block;
-    }
-}
-
-@media (max-width: 991px) {
-    .navbar-collapse {
-        flex-basis: auto;
-        flex-grow: 1;
-    }
-
-    .navbar-toggler {
-        order: 1;
-        padding-left: 0;
-        margin-left: 0;
-        border: none;
-        outline: none;
-    }
-
-    .navbar-toggler:focus,
-    .navbar-toggler:active,
-    .navbar-toggler-icon {
-        box-shadow: none;
-        outline: none;
-        border: none;
-    }
-
-    .mobile-search-bar {
-        order: 2;
-        flex-grow: 1;
-        margin-right: 0;
-        flex-basis: 100px;
-    }
-}
-
-
-/* Base styles */
-.navbar-collapse {
-    background-color: #343a40; /* Dark background to match navbar-dark */
-    padding: 15px; /* Add padding for spacing */
-    border-radius: 5px; /* Optional: for rounded corners */
-}
-
-/* Only apply styles when the navbar is collapsed */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        position: absolute;
-        top: 56px; /* Adjust according to your navbar height */
-        width: 100%;
-        height: calc(100vh - 56px); /* Adjust according to your navbar height */
-        background-color: rgba(52, 58, 64, 0.9); /* Slightly transparent background */
-        z-index: 1; /* Ensure it is above other content */
-        overflow-y: auto; /* Allow scrolling if content overflows */
-    }
-
-    .navbar-toggler {
-        z-index: 2; /* Ensure the toggle button is above the collapsed menu */
-    }
 }
