@@ -1,7 +1,5 @@
-// Client-side should not use Node's `require` or `dotenv`.
-// The API key is injected into the page as `window.API_KEY` by the EJS template.
-const apiKey = window.API_KEY || '';
-let baseUrl = 'https://api.themoviedb.org/3/tv/airing_today';
+// Calls to TMDB are proxied through our backend API to keep the API key secret.
+let baseUrl = '/api/tv/airing_today';
 let scrollPosition = 0;
 
 // Function to map country codes to full country names
@@ -41,8 +39,7 @@ function getCountryName(code) {
 // Fetch a single page of TV shows airing today
 async function getAiringToday(page = 1) {
     try {
-        if (!apiKey) throw new Error('API key is not set (window.API_KEY)');
-        let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
+        let res = await axios.get(`${baseUrl}?page=${page}`);
         let results = res.data.results;
         return results;
     } catch (e) {
@@ -100,7 +97,7 @@ async function fetchAiringTodayShows(page = 1) {
 
 // Show TV show details
 async function showTVShowDetails(tvshowId) {
-    let url2 = `https://api.themoviedb.org/3/tv/${tvshowId}?api_key=${apiKey}&append_to_response=videos,credits,watch/providers`;
+    let url2 = `/api/tv/${tvshowId}?append=videos,credits,watch/providers`;
     try {
         let res = await axios.get(url2);
         let tvshow = res.data;

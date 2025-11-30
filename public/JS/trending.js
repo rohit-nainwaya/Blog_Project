@@ -1,13 +1,11 @@
-// Client-side should not use Node's `require` or `dotenv`.
-// The API key is injected into the page as `window.API_KEY` by the EJS template.
-const apiKey = window.API_KEY || '';
-let baseUrl = 'https://api.themoviedb.org/3/trending/movie/day';
+// Calls to TMDB are proxied through our backend API to keep the API key secret.
+let baseUrl = '/api/trending';
 let scrollPosition = 0;
 
 // Fetch a single page of popular movies
 async function getTrendingMovies(page = 1) {
     try {
-        let res = await axios.get(`${baseUrl}?api_key=${apiKey}&page=${page}`);
+        let res = await axios.get(`${baseUrl}?page=${page}`);
         return res.data.results;
     } catch (e) {
         console.error(`Error fetching popular movies: ${e}`);
@@ -18,7 +16,7 @@ async function getTrendingMovies(page = 1) {
 // Fetch movie details to get production countries
 async function getMovieDetails(movieId) {
     try {
-        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`);
+        let res = await axios.get(`/api/movie/${movieId}`);
         return res.data;
     } catch (e) {
         console.error(`Error fetching movie details: ${e}`);
@@ -79,8 +77,8 @@ async function fetchTrendingMovies(page = 1) {
 // Fetch watch providers for a movie
 async function getWatchProviders(movieId) {
     try {
-        let res = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${apiKey}`);
-        return res.data.results;
+        let res = await axios.get(`/api/movie/${movieId}/providers`);
+        return res.data.results || {};
     } catch (e) {
         console.error(`Error fetching watch providers: ${e}`);
         return {};
@@ -91,7 +89,7 @@ async function getWatchProviders(movieId) {
 async function showMovieDetails(movieId) {
     const movieDetails = await getMovieDetails(movieId);
     const countries = movieDetails && movieDetails.production_countries ? movieDetails.production_countries.map(c => c.name).join(', ') : 'Unknown';
-    let url2 = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos,credits`;
+    let url2 = `/api/movie/${movieId}?append=videos,credits`;
     try {
         let res = await axios.get(url2);
         let movie = res.data;

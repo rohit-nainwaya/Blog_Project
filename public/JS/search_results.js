@@ -1,13 +1,11 @@
-// Client-side should not use Node's `require` or `dotenv`.
-// The API key is injected into the page as `window.API_KEY` by the EJS template.
-const apiKey = window.API_KEY || '';
-let baseUrl = 'https://api.themoviedb.org/3/search/multi';
+// Calls to TMDB are proxied through our backend API to keep the API key secret.
+let baseUrl = '/api/search';
 let scrollPosition = 0;
 let noMoreResults = false; // Flag to indicate if no more results are available
 
 async function getSearchResults(query, page = 1) {
     try {
-        let res = await axios.get(`${baseUrl}?api_key=${apiKey}&query=${encodeURIComponent(query)}&page=${page}`);
+        let res = await axios.get(`${baseUrl}?q=${encodeURIComponent(query)}&page=${page}`);
         return res.data.results;
     } catch (e) {
         console.error(`Error fetching search results: ${e}`);
@@ -29,9 +27,9 @@ async function getCountryByIP() {
 async function getDetails(id, type) {
     let url;
     if (type === 'movie') {
-        url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=videos,credits`;
+        url = `/api/movie/${id}?append=videos,credits`;
     } else if (type === 'tv') {
-        url = `https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&append_to_response=videos,credits`;
+        url = `/api/tv/${id}?append=videos,credits`;
     }
     try {
         let res = await axios.get(url);
@@ -93,13 +91,13 @@ async function fetchSearchResults(query, page = 1) {
 async function getWatchProviders(id, type) {
     let url;
     if (type === 'movie') {
-        url = `https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${apiKey}`;
+        url = `/api/movie/${id}/providers`;
     } else if (type === 'tv') {
-        url = `https://api.themoviedb.org/3/tv/${id}/watch/providers?api_key=${apiKey}`;
+        url = `/api/tv/${id}/providers`;
     }
     try {
         let res = await axios.get(url);
-        return res.data.results;
+        return res.data.results || {};
     } catch (e) {
         console.error(`Error fetching watch providers: ${e}`);
         return {};

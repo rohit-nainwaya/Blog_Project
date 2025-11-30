@@ -116,6 +116,9 @@ app.get('/search_results', (req, res) => {
     res.render('api/search_results.ejs', { query: q });
 });
 
+// TMDB proxy API routes (server-side, keeps API key hidden)
+app.use('/api', require('./routes/tmdb'));
+
 // Policy Routes
 app.get('/about', (req, res) => {
     res.render('policies/about.ejs');

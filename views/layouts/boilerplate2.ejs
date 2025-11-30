@@ -64,8 +64,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/style.css">
     <script>
-      // Expose API key to client-side scripts from server .env
-      window.API_KEY = '<%= process.env.API_KEY %>';
+      // API key must NOT be exposed to client. Leave blank (frontend calls server /api).
+      window.API_KEY = '';
     </script>
 
     <!-- Lazy Loading Script -->
