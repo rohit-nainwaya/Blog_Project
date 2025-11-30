@@ -201,6 +201,121 @@ input:focus {
     box-shadow: 0 0 10px #9acd32 !important; /* Adjust shadow as needed */
 }
 
+/* Footer styles (ensure footer looks consistent across layouts) */
+footer {
+    background-color: #232323;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social {
+    padding: 0;
+}
+
+footer .social a {
+    color: #ffffff;
+    opacity: 0.8;
+    padding: 0 10px;
+    font-size: 1.5em;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+footer .social a:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #17a2b8;
+}
+
+.footer-links a:not(:last-child)::after {
+    content: "|";
+    margin: 0 10px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links a {
+        margin: 5px 0;
+    }
+}
 .text-green{
     color: yellowgreen;
+}
+
+/* Navbar rules copied from index.css to keep navbar consistent across layouts */
+.navbar {
+    position: sticky !important;
+    top: 0px;
+    left: 0px;
+    background-color: #1b1818;
+    z-index: 3;
+    height: 6rem !important;
+}
+
+/* .navbar-nav .nav-item:hover .dropdown-menu {
+    display: block !important;
+} */
+
+.navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #17a2b8;
+}
+
+.custom-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath stroke="white" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.55);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, 
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .dropdown-menu {
+    background-color: #343a40;
+}
+
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:hover, 
+.navbar-dark .navbar-nav .dropdown-menu .dropdown-item:focus {
+    color: rgba(255,255,255,.75);
+    background-color: rgba(255,255,255,.15);
+}
+
+.navbar-brand {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .navbar-brand {
+        display: block;
+    }
 }
