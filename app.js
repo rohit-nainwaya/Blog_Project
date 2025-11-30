@@ -29,54 +29,6 @@ app.get('/', (req, res) => {
     res.render('locals/index.ejs');
 });
 
-app.get('/Top_Actions', (req, res) => {
-    res.render('locals/action.ejs');
-});
-
-app.get('/Top_Comedy', (req, res) => {
-    res.render('locals/comedy.ejs');
-});
-
-app.get('/Top_Drama', (req, res) => {
-    res.render('locals/drama.ejs');
-});
-
-app.get('/Top_Fantasy', (req, res) => {
-    res.render('locals/fantasy.ejs');
-});
-
-app.get('/Top_Horror', (req, res) => {
-    res.render('locals/horror.ejs');
-});
-
-app.get('/Top_Mystery', (req, res) => {
-    res.render('locals/mystery.ejs');
-});
-
-app.get('/Top_Romance', (req, res) => {
-    res.render('locals/romance.ejs');
-});
-
-app.get('/Top_SciFi', (req, res) => {
-    res.render('locals/sci-fi.ejs');
-});
-
-app.get('/Top_Thriller', (req, res) => {
-    res.render('locals/thriller.ejs');
-});
-
-app.get('/Top_Documentary', (req, res) => {
-    res.render('locals/documentary.ejs');
-});
-
-app.get('/Top_Animation', (req, res) => {
-    res.render('locals/animation.ejs');
-});
-
-app.get('/Top_Biographical', (req, res) => {
-    res.render('locals/biographical.ejs');
-});
-
 app.get('/Popular_Movies', (req, res) => {
     res.render('api/popular.ejs');
 });

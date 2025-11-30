@@ -345,3 +345,53 @@ footer .social a:hover {
         z-index: 2; /* Ensure the toggle button is above the collapsed menu */
     }
 }
+
+/* Added cinematic overrides for homepage */
+:root{
+    --bg:#0b0b0b;
+    --card-bg:rgba(0,0,0,0.6);
+    --accent: yellowgreen;
+    --muted:#cfcfcf;
+}
+body{background:var(--bg);color:#fff}
+.movie-hero .carousel-item img{height:480px;object-fit:cover;filter:brightness(0.65)}
+.movie-caption{background:linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.6) 60%);padding:1.5rem;border-radius:6px}
+.movie-caption h5{font-size:1.6rem;font-weight:700;letter-spacing:0.5px;color:var(--accent);text-shadow:0 2px 6px rgba(0,0,0,0.6)}
+.movie-caption p{color:var(--muted);margin:0}
+.card.movie-card{background:var(--card-bg);border:none;overflow:hidden}
+.card.movie-card .card-img{height:230px;object-fit:cover;filter:brightness(0.75)}
+.movie-badge{position:absolute;top:12px;left:12px;background:var(--accent);color:#000;padding:0.25rem 0.5rem;border-radius:4px;font-weight:700}
+.movie-grid .card-title a{color:#fff;text-decoration:none}
+.blog{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1.75rem;border-radius:8px;color:var(--muted)}
+.blog h1{color:var(--accent);font-size:2rem}
+.desc{background:linear-gradient(90deg, rgba(0,0,0,0.0), rgba(255,255,255,0.02));padding:2.25rem;border-top:1px solid rgba(255,255,255,0.03)}
+@media(min-width:992px){
+    .movie-hero .carousel-item img{height:560px}
+}
+
+/* Horizontal scrolling rows (IMDB-like) */
+.section-row{margin:2rem 0}
+.section-row .section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem}
+.horizontal-scroll{display:flex;gap:1rem;overflow-x:auto;padding-bottom:0.5rem}
+.horizontal-scroll::-webkit-scrollbar{height:8px}
+.horizontal-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:8px}
+.movie-tile{flex:0 0 180px}
+.movie-tile img{width:100%;height:270px;object-fit:cover;border-radius:6px}
+.movie-tile .tile-title{margin-top:0.45rem;font-size:0.95rem;color:#fff}
+.see-all-link{color:var(--accent);text-decoration:none;font-weight:700}
+
+@media (max-width:576px){
+    .movie-tile{flex:0 0 140px}
+    .movie-tile img{height:200px}
+}
+
+/* Homepage header/search fixes */
+.home-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0}
+.home-header .logo-block{display:flex;align-items:center;gap:0.75rem}
+.home-search{display:flex;align-items:center;gap:0.5rem;width:100%;max-width:760px}
+.home-search .form-control{border-radius:6px}
+.home-search .btn{border-radius:6px}
+.homepage-content{width:100%}
+
+/* Reduce top spacing for better balance */
+header.text-center.my-4{margin-top:0.5rem;margin-bottom:1.5rem}
