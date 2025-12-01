@@ -1,67 +1,127 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <form class="d-flex d-lg-none mobile-search-bar" role="search" action="/search_results" method="get">
-            <input class="form-control me-2" type="search" placeholder="Movies, shows, anime..." aria-label="Search" name="q">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
+        <!-- Mobile Search (visible on small screens) -->
+        <div class="mobile-search-wrapper d-lg-none">
+            <form class="mobile-search-form" role="search" action="/search_results" method="get">
+                <div class="search-input-group">
+                    <i class="fas fa-search search-icon"></i>
+                    <input class="search-input" type="search" placeholder="Search movies, shows..." aria-label="Search" name="q" autocomplete="off">
+                    <button class="search-submit" type="submit">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Logo (visible on all screens) -->
+        <a class="navbar-brand" href="/">
+            <img src="/assets/home_page/mvz_logo.webp" alt="Movie Zilla Logo" class="brand-logo">
+            <span class="brand-text">Movie <span class="brand-highlight">Zilla</span></span>
+        </a>
+
+        <!-- Mobile Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon custom-toggler-icon"></span>
+            <span class="toggler-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
         </button>
+
+        <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand" href="/">
-                <img src="/assets/home_page/mvz_logo.webp" style="width: 50px">
-            </a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Movies Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Movies
+                        <i class="fas fa-film nav-icon"></i>
+                        <span>Movies</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/Popular_Movies">Popular</a></li>
-                        <li><a class="dropdown-item" href="/Upcoming_Movies">Upcoming</a></li>
-                        <li><a class="dropdown-item" href="/Trending_Movies">Trending</a></li>
-                        <li><a class="dropdown-item" href="/Top_Rated_Movies">Top Rated</a></li>
+                        <li><a class="dropdown-item" href="/Popular_Movies">
+                            <i class="fas fa-fire"></i> Popular
+                        </a></li>
+                        <li><a class="dropdown-item" href="/Upcoming_Movies">
+                            <i class="fas fa-calendar-plus"></i> Upcoming
+                        </a></li>
+                        <li><a class="dropdown-item" href="/Trending_Movies">
+                            <i class="fas fa-chart-line"></i> Trending
+                        </a></li>
+                        <li><a class="dropdown-item" href="/Top_Rated_Movies">
+                            <i class="fas fa-crown"></i> Top Rated
+                        </a></li>
                     </ul>
                 </li>
+
+                <!-- TV Shows Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        TV Shows
+                        <i class="fas fa-tv nav-icon"></i>
+                        <span>TV Shows</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/Popular_Tv_Shows">Popular</a></li>
-                        <li><a class="dropdown-item" href="/On_Tv_Shows">On TV</a></li>
-                        <li><a class="dropdown-item" href="/Airing_Shows_Today">Airing Today</a></li>
-                        <li><a class="dropdown-item" href="/Top_Rated_Shows">Top Rated</a></li>
+                        <li><a class="dropdown-item" href="/Popular_Tv_Shows">
+                            <i class="fas fa-fire"></i> Popular
+                        </a></li>
+                        <li><a class="dropdown-item" href="/On_Tv_Shows">
+                            <i class="fas fa-broadcast-tower"></i> On TV
+                        </a></li>
+                        <li><a class="dropdown-item" href="/Airing_Shows_Today">
+                            <i class="fas fa-circle"></i> Airing Today
+                        </a></li>
+                        <li><a class="dropdown-item" href="/Top_Rated_Shows">
+                            <i class="fas fa-crown"></i> Top Rated
+                        </a></li>
                     </ul>
                 </li>
+
+                <!-- Genres Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Genre Top Picks
+                        <i class="fas fa-th-large nav-icon"></i>
+                        <span>Genres</span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Comedy</a></li>
-                        <li><a class="dropdown-item" href="#">Drama</a></li>
-                        <li><a class="dropdown-item" href="#">Fantasy</a></li>
-                        <li><a class="dropdown-item" href="#">Horror</a></li>
-                        <li><a class="dropdown-item" href="#">Mystery</a></li>
-                        <li><a class="dropdown-item" href="#">Romance</a></li>
-                        <li><a class="dropdown-item" href="#">Science Fiction</a></li>
-                        <li><a class="dropdown-item" href="#">Thriller</a></li>
-                        <li><a class="dropdown-item" href="#">Documentary</a></li>
-                        <li><a class="dropdown-item" href="#">Animation</a></li>
+                    <ul class="dropdown-menu dropdown-menu-genres">
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-gun"></i> Action</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-smile"></i> Comedy</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-theater-masks"></i> Drama</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-hat-wizard"></i> Fantasy</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-ghost"></i> Horror</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-user-secret"></i> Mystery</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-heart"></i> Romance</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-rocket"></i> Sci-Fi</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-bolt"></i> Thriller</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-video"></i> Documentary</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-wand-magic-sparkles"></i> Animation</a></li>
                     </ul>
                 </li>
+
+                <!-- Copyright Link -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/copyright"><b>Copyright & Licensing</b></a>
+                    <a class="nav-link" href="/copyright">
+                        <i class="fas fa-shield-alt nav-icon"></i>
+                        <span>Copyright</span>
+                    </a>
                 </li>
+
+                <!-- Home Link -->
                 <li class="nav-item">
-                    <a class="nav-link" style="color: yellowgreen;" href="/"><b>Home</b></a>
+                    <a class="nav-link nav-link-home" href="/">
+                        <i class="fas fa-home nav-icon"></i>
+                        <span>Home</span>
+                    </a>
                 </li>
             </ul>
-            <form class="d-flex d-none d-lg-flex" role="search" action="/search_results" method="get">
-                <input class="form-control me-2 inp" type="search" placeholder="Movies, shows, anime..." aria-label="Search" name="q">
-                <button class="btn s-btn" type="submit">Search</button>
+
+            <!-- Desktop Search -->
+            <form class="d-none d-lg-flex desktop-search-form" role="search" action="/search_results" method="get">
+                <div class="search-input-group">
+                    <i class="fas fa-search search-icon"></i>
+                    <input class="search-input" type="search" placeholder="Search movies, shows..." aria-label="Search" name="q" autocomplete="off">
+                    <button class="search-submit" type="submit">
+                        Search
+                    </button>
+                </div>
             </form>
         </div>
     </div>

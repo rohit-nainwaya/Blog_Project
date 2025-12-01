@@ -1,17 +1,132 @@
-<footer class="text-center py-4">
-    <div class="container">
-        <ul class="social list-inline">
-            <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61562875831838"><i class="fa-brands fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="https://x.com/Movie__Zilla?t=PHB9WjJDEAqkfbLvpeLahg&s=08"><i class="fa-brands fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/themoviezilla?igsh=MWlrMm9hYWhqOTVlcg=="><i class="fa-brands fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="https://youtu.be/0yffScW2N7Y?si=TYOilPzkX1-K3DQx"><i class="fa-brands fa-youtube"></i></a></li>
-        </ul>
-        <p>&copy; 2024 Moviezilla. All rights reserved. All content on this website is copyright-free and is used under proper licenses or falls under fair use.</p>
-        <div class="footer-links mt-3">
-            <a href="/about" class="text-white mx-2">About Us</a>
-            <a href="/contact" class="text-white mx-2">Contact Us</a>
-            <a href="/terms" class="text-white mx-2">Terms & Conditions</a>
-            <a href="/privacy" class="text-white mx-2">Privacy Policy</a>
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="container">
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="row g-4">
+                    <!-- Brand Section -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-brand">
+                            <img src="/assets/home_page/mvz_logo.webp" alt="Movie Zilla Logo" class="footer-logo">
+                            <h3 class="footer-brand-name">Movie <span>Zilla</span></h3>
+                            <p class="footer-tagline">Your ultimate destination for movies and TV shows worldwide</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/profile.php?id=61562875831838" target="_blank" rel="noopener noreferrer" class="social-link facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://x.com/Movie__Zilla?t=PHB9WjJDEAqkfbLvpeLahg&s=08" target="_blank" rel="noopener noreferrer" class="social-link twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="https://www.instagram.com/themoviezilla?igsh=MWlrMm9hYWhqOTVlcg==" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://youtu.be/0yffScW2N7Y?si=TYOilPzkX1-K3DQx" target="_blank" rel="noopener noreferrer" class="social-link youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <div class="footer-section">
+                            <h4 class="footer-title">Movies</h4>
+                            <ul class="footer-links">
+                                <li><a href="/Popular_Movies">Popular</a></li>
+                                <li><a href="/Upcoming_Movies">Upcoming</a></li>
+                                <li><a href="/Trending_Movies">Trending</a></li>
+                                <li><a href="/Top_Rated_Movies">Top Rated</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- TV Shows Links -->
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <div class="footer-section">
+                            <h4 class="footer-title">TV Shows</h4>
+                            <ul class="footer-links">
+                                <li><a href="/Popular_Tv_Shows">Popular</a></li>
+                                <li><a href="/On_Tv_Shows">On TV</a></li>
+                                <li><a href="/Airing_Shows_Today">Airing Today</a></li>
+                                <li><a href="/Top_Rated_Shows">Top Rated</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Legal Links -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-section">
+                            <h4 class="footer-title">Information</h4>
+                            <ul class="footer-links">
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/contact">Contact Us</a></li>
+                                <li><a href="/terms">Terms & Conditions</a></li>
+                                <li><a href="/privacy">Privacy Policy</a></li>
+                                <li><a href="/copyright">Copyright & Licensing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Divider -->
+            <div class="footer-divider"></div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright-text">
+                            &copy; 2024 <strong>Movie Zilla</strong>. All rights reserved. 
+                            <span class="d-block d-md-inline mt-2 mt-md-0">
+                                Content used under proper licenses and fair use.
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-badges">
+                            <span class="badge-item">
+                                <i class="fas fa-shield-check"></i> Secure
+                            </span>
+                            <span class="badge-item">
+                                <i class="fas fa-bolt"></i> Fast
+                            </span>
+                            <span class="badge-item">
+                                <i class="fas fa-mobile-alt"></i> Responsive
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 </footer>
+
+<script>
+    // Scroll to top functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>

@@ -1,31 +1,185 @@
 <% layout('layouts/boilerplate2') %>
 <body>
-    <h3 class="sticky">Popular TV Shows</h3>
-    <div class="container-fluid px-0">
-        <div class="container mt-4">
-            <div class="tvshow_card"></div>
-            <div id="tvshowDetails" class="hidden mt-4">
-                <button class="btn btn-danger mb-3" onclick="goBack()">Back to List</button>
-                <h2 id="tvshowTitle" class="text-white"></h2>
-                <p id="tvshowDescription" class="text-white"></p>
-                <a id="ottLink" href="#" class="btn btn-primary mb-3" target="_blank">Watch on OTT Platform</a>
-                <div class="trailer">
-                    <h3 class="text-white">TV Show Trailer</h3>
-                    <div class="iframe-container">
-                        <iframe id="tvshowTrailer" width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Popular TV Shows</h1>
+            <p class="hero-subtitle">The most-watched series worldwide</p>
+        </div>
+    </div>
+
+    <!-- Filter & Sort Section -->
+    <div class="container mt-4">
+        <div class="filter-bar">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <select class="form-select filter-select" id="sortBy">
+                        <option value="popularity">Sort by Popularity</option>
+                        <option value="rating">Sort by Rating</option>
+                        <option value="first_air_date">Sort by Air Date</option>
+                        <option value="name">Sort by Name</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select filter-select" id="genreFilter">
+                        <option value="">All Genres</option>
+                        <!-- Will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
                     </div>
-                </div>
-                <div class="cast">
-                    <h3 class="text-white">Cast</h3>
-                    <div class="row" id="castList"></div>
-                </div>
-                <div class="where-to-watch mt-4">
-                    <h3 class="text-white">Where to Watch</h3>
-                    <ul id="watchProvidersList" class="text-white"></ul>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="container-fluid px-0">
+        <div class="container mt-4">
+            <!-- Loading Skeleton -->
+            <div id="loadingSkeleton" class="movie-grid">
+                <div class="skeleton-card" style="--delay: 0s;"></div>
+                <div class="skeleton-card" style="--delay: 0.1s;"></div>
+                <div class="skeleton-card" style="--delay: 0.2s;"></div>
+                <div class="skeleton-card" style="--delay: 0.3s;"></div>
+                <div class="skeleton-card" style="--delay: 0.4s;"></div>
+                <div class="skeleton-card" style="--delay: 0.5s;"></div>
+            </div>
+
+            <!-- TV Shows Grid -->
+            <div class="movie-grid" id="tvShowGrid"></div>
+
+            <!-- TV Show Details Modal -->
+            <div id="tvshowDetails" class="modal-overlay hidden">
+                <div class="modal-content-wrapper">
+                    <button id="closeDetails" class="modal-close" onclick="goBack()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <div class="detail-backdrop"></div>
+                    
+                    <div class="detail-content">
+                        <div class="container">
+                            <div class="row g-4">
+                                <!-- Poster Column -->
+                                <div class="col-lg-4">
+                                    <div class="poster-wrapper">
+                                        <img id="tvshowPoster" src="/assets/home_page/alt.jpg" alt="poster" class="detail-poster">
+                                        <div class="rating-badge">
+                                            <i class="fas fa-star"></i>
+                                            <span id="ratingBadge">0</span>
+                                        </div>
+                                        <div class="popular-badge">
+                                            <i class="fas fa-fire"></i>
+                                            <span>Popular</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="action-buttons mt-3">
+                                        <a id="ottLink" href="#" class="btn-custom btn-primary" target="_blank">
+                                            <i class="fas fa-play"></i> Watch Now
+                                        </a>
+                                        <button class="btn-custom btn-secondary" onclick="goBack()">
+                                            <i class="fas fa-arrow-left"></i> Back
+                                        </button>
+                                    </div>
+
+                                    <div class="movie-stats mt-4">
+                                        <div class="stat-item">
+                                            <i class="fas fa-tv"></i>
+                                            <span id="tvshowSeasons"></span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <i class="fas fa-film"></i>
+                                            <span id="tvshowEpisodes"></span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <i class="fas fa-calendar"></i>
+                                            <span id="tvshowAirDate"></span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <i class="fas fa-globe"></i>
+                                            <span id="tvshowCountry"></span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <i class="fas fa-signal"></i>
+                                            <span id="tvshowStatus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Info Column -->
+                                <div class="col-lg-8">
+                                    <div class="movie-header">
+                                        <h1 id="tvshowTitle" class="movie-title"></h1>
+                                        <div class="movie-meta">
+                                            <span id="tvshowGenres" class="genres"></span>
+                                        </div>
+                                    </div>
+
+                                    <p id="tvshowDescription" class="movie-description"></p>
+
+                                    <div class="movie-credits">
+                                        <div class="credit-item">
+                                            <span class="credit-label">Created By:</span>
+                                            <span id="tvshowCreator" class="credit-value"></span>
+                                        </div>
+                                        <div class="credit-item">
+                                            <span class="credit-label">Network:</span>
+                                            <span id="tvshowNetwork" class="credit-value"></span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Trailer Section -->
+                                    <div class="section-block trailer-section">
+                                        <h3 class="section-title">
+                                            <i class="fas fa-film"></i> Trailer
+                                        </h3>
+                                        <div class="iframe-container">
+                                            <iframe id="tvshowTrailer" src="" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+
+                                    <!-- Cast Section -->
+                                    <div class="section-block">
+                                        <h3 class="section-title">
+                                            <i class="fas fa-users"></i> Cast
+                                        </h3>
+                                        <div id="castList" class="cast-carousel"></div>
+                                    </div>
+
+                                    <!-- Where to Watch -->
+                                    <div class="section-block">
+                                        <h3 class="section-title">
+                                            <i class="fas fa-tv"></i> Where to Watch
+                                        </h3>
+                                        <div id="watchProvidersList" class="providers-list"></div>
+                                    </div>
+
+                                    <!-- Similar Shows -->
+                                    <div class="section-block">
+                                        <h3 class="section-title">
+                                            <i class="fas fa-heart"></i> Similar Shows
+                                        </h3>
+                                        <div id="similarRow" class="similar-carousel"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="/JS/populartv.js"></script>
 </body>
