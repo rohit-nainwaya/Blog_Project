@@ -1,35 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-        <!-- Mobile Search (visible on small screens) -->
-        <div class="mobile-search-wrapper d-lg-none">
-            <form class="mobile-search-form" role="search" action="/search_results" method="get">
-                <div class="search-input-group">
-                    <i class="fas fa-search search-icon"></i>
-                    <input class="search-input" type="search" placeholder="Search movies, shows..." aria-label="Search" name="q" autocomplete="off">
-                    <button class="search-submit" type="submit">
-                        <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-            </form>
+        <div class="navbar-header-wrapper">
+            <!-- Logo (Always visible) -->
+            <a class="navbar-brand" href="/">
+                <img src="/assets/home_page/mvz_logo.webp" alt="Movie Zilla Logo" class="brand-logo">
+                <span class="brand-text">Movie <span class="brand-highlight">Zilla</span></span>
+            </a>
+
+            <!-- Mobile Toggler (Always visible) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
         </div>
 
-        <!-- Logo (visible on all screens) -->
-        <a class="navbar-brand" href="/">
-            <img src="/assets/home_page/mvz_logo.webp" alt="Movie Zilla Logo" class="brand-logo">
-            <span class="brand-text">Movie <span class="brand-highlight">Zilla</span></span>
-        </a>
-
-        <!-- Mobile Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
-        </button>
-
-        <!-- Navbar Content -->
+        <!-- Collapsible Content -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <!-- Mobile Search (inside menu) -->
+            <div class="mobile-search-container d-lg-none">
+                <form class="mobile-search-form" role="search" action="/search_results" method="get">
+                    <div class="search-input-group">
+                        <i class="fas fa-search search-icon"></i>
+                        <input class="search-input" type="search" placeholder="Search movies, shows..." aria-label="Search" name="q" autocomplete="off" required>
+                        <button class="search-submit" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Navigation Links -->
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <!-- Movies Dropdown -->
                 <li class="nav-item dropdown">

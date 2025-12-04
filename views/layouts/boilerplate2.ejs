@@ -217,5 +217,88 @@
             });
         });
     </script>
+    <script>
+// Mobile Menu Enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth < 992) {
+        const navbar = document.querySelector('.navbar');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const body = document.body;
+        
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        body.appendChild(overlay);
+        
+        // Toggle menu
+        if (navbarToggler) {
+            navbarToggler.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                setTimeout(() => {
+                    if (navbarCollapse.classList.contains('show')) {
+                        overlay.classList.add('active');
+                        body.classList.add('mobile-menu-open');
+                    } else {
+                        overlay.classList.remove('active');
+                        body.classList.remove('mobile-menu-open');
+                    }
+                }, 10);
+            });
+        }
+        
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', function() {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
+        });
+        
+        // Close menu when clicking a link
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+        
+        // Handle dropdown toggles on mobile
+        const dropdownToggles = document.querySelectorAll('.navbar-nav .dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const parent = this.parentElement;
+                const dropdownMenu = this.nextElementSibling;
+                
+                // Close other dropdowns
+                document.querySelectorAll('.navbar-nav .dropdown-menu.show').forEach(menu => {
+                    if (menu !== dropdownMenu) {
+                        menu.classList.remove('show');
+                        menu.parentElement.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdownMenu.classList.toggle('show');
+                parent.classList.toggle('active');
+            });
+        });
+        
+        // Close menu on window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 992) {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
